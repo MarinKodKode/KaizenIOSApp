@@ -46,45 +46,38 @@ struct TodoHomeView: View {
         ),
     ]
     
-    var body: some View{
-        ZStack{
-            Text("Hoy: 30 Marzo")
-                .font(.title)
+    var body: some View {
+        VStack {
+            HStack {
+                Text("Lista de tareas")
+                    .frame(maxWidth: .infinity, alignment: .leading)
+                    .font(.title)
+                    .bold()
+                Spacer()
+                Image(systemName: "plus")
+                    .onTapGesture {
+                        crearTodo = true
+                    }
+            }
+            .padding(.horizontal)
+            Divider()
+            ScrollView {
+                LazyVGrid(columns: gridItems) {
+                    ForEach(todos, id: \.self) { todo in
+                        CardSmallView(todo: todo)
+                    }
+                }.padding(.horizontal)
+            }
+            Spacer()
         }
+            .sheet(isPresented: $crearTodo) {
+                CrearTodoView(
+                    title: $title,
+                    descripcion: $descripcion,
+                    crearTodo: $crearTodo
+                )
+            }
     }
-    
-//    var body: some View {
-//        VStack {
-//            HStack {
-//                Text("Lista de tareas")
-//                    .frame(maxWidth: .infinity, alignment: .leading)
-//                    .font(.title)
-//                    .bold()
-//                Spacer()
-//                Image(systemName: "plus")
-//                    .onTapGesture {
-//                        crearTodo = true
-//                    }
-//            }
-//            .padding(.horizontal)
-//            Divider()
-//            ScrollView {
-//                LazyVGrid(columns: gridItems) {
-//                    ForEach(todos, id: \.self) { todo in
-//                        CardSmallView(todo: todo)
-//                    }
-//                }.padding(.horizontal)
-//            }
-//            Spacer()
-//        }
-//            .sheet(isPresented: $crearTodo) {
-//                CrearTodoView(
-//                    title: $title,
-//                    descripcion: $descripcion,
-//                    crearTodo: $crearTodo
-//                )
-//            }
-//    }
 }
 
 struct CrearTodoView: View {
