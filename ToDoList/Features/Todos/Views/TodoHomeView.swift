@@ -1,10 +1,3 @@
-//
-//  TodoHomeView.swift
-//  ToDoList
-//
-//  Created by Desarrollo on 27/03/26.
-//
-
 import SwiftUI
 
 struct TodoHomeView: View {
