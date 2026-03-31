@@ -2,7 +2,7 @@ import SwiftUI
 import SwiftData
 
 @main
-struct ToDoListApp: App {
+struct KaizenApp: App {
     
     @StateObject var router = Router.shared
     @StateObject var todo = TodoViewModel()

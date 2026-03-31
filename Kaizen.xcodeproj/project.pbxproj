@@ -13,7 +13,7 @@
 		E9C72CAA2F7704780061D276 /* TodoHomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9C72CA92F7704780061D276 /* TodoHomeView.swift */; };
 		E9FA20F92F75943000D9D5D4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E9FA20F52F75943000D9D5D4 /* Assets.xcassets */; };
 		E9FA20FA2F75943000D9D5D4 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9FA20F62F75943000D9D5D4 /* ContentView.swift */; };
-		E9FA20FB2F75943000D9D5D4 /* ToDoListApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9FA20F72F75943000D9D5D4 /* ToDoListApp.swift */; };
+		E9FA20FB2F75943000D9D5D4 /* KaizenApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9FA20F72F75943000D9D5D4 /* KaizenApp.swift */; };
 		E9FA21072F75953F00D9D5D4 /* Router.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9FA21062F75953F00D9D5D4 /* Router.swift */; };
 		E9FA21092F7595C800D9D5D4 /* Routes.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9FA21082F7595C800D9D5D4 /* Routes.swift */; };
 		E9FA210B2F759F1D00D9D5D4 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9FA210A2F759F1D00D9D5D4 /* HomeView.swift */; };
@@ -36,7 +36,7 @@
 		E9FA20E52F75929700D9D5D4 /* Kaizen.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Kaizen.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E9FA20F52F75943000D9D5D4 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		E9FA20F62F75943000D9D5D4 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
-		E9FA20F72F75943000D9D5D4 /* ToDoListApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToDoListApp.swift; sourceTree = "<group>"; };
+		E9FA20F72F75943000D9D5D4 /* KaizenApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KaizenApp.swift; sourceTree = "<group>"; };
 		E9FA21062F75953F00D9D5D4 /* Router.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Router.swift; sourceTree = "<group>"; };
 		E9FA21082F7595C800D9D5D4 /* Routes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Routes.swift; sourceTree = "<group>"; };
 		E9FA210A2F759F1D00D9D5D4 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
@@ -147,7 +147,7 @@
 				E9FA20FE2F7594A300D9D5D4 /* Features */,
 				E9FA20F52F75943000D9D5D4 /* Assets.xcassets */,
 				E9FA20F62F75943000D9D5D4 /* ContentView.swift */,
-				E9FA20F72F75943000D9D5D4 /* ToDoListApp.swift */,
+				E9FA20F72F75943000D9D5D4 /* KaizenApp.swift */,
 			);
 			path = Kaizen;
 			sourceTree = "<group>";
@@ -345,7 +345,7 @@
 				E9FA210B2F759F1D00D9D5D4 /* HomeView.swift in Sources */,
 				E9FA210D2F759F5300D9D5D4 /* CreateToDoView.swift in Sources */,
 				E9FA21162F75BCCD00D9D5D4 /* TodoViewModel.swift in Sources */,
-				E9FA20FB2F75943000D9D5D4 /* ToDoListApp.swift in Sources */,
+				E9FA20FB2F75943000D9D5D4 /* KaizenApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -481,6 +481,8 @@
 				DEVELOPMENT_TEAM = L7RQ7B5F43;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_CFBundleDisplayName = Kaizen;
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.productivity";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -513,6 +515,8 @@
 				DEVELOPMENT_TEAM = L7RQ7B5F43;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_CFBundleDisplayName = Kaizen;
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.productivity";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
