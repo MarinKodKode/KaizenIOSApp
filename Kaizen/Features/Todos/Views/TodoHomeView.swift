@@ -27,38 +27,52 @@ struct TodoHomeView: View {
             bgColor
                 .ignoresSafeArea()
             
-            VStack(alignment: .leading, spacing:30){
+            VStack(alignment: .leading){
+                
                 HStack{
                     VStack(alignment:.leading){
-                        Text("Hola!")
+
                         Text("Ahmed Garcia")
                     }
                     .font(.system(size:25).bold())
                     .foregroundColor(fgColorText)
                     
                     Spacer()
-                    Image(systemName: "person.crop.square.fill")
+                
+                    ZStack {
+                        Circle()
+                            .fill(Color.cyan)
+                            .frame(width: 48, height: 48)
+                        
+                        Image(systemName: "person.fill")
+                            .resizable()
+                            .scaledToFit()
+                            .foregroundStyle(.white)
+                            .frame(width: 20, height: 28)
+                    }
+                    
+                    Image("company_logo")
                         .resizable()
-                        .aspectRatio(contentMode: .fit)
-                        .frame(width: 60,height: 60)
-                        .foregroundColor(fgColorText)
+                        .scaledToFit()
+                        .frame(width: 48, height: 48)
+                        .clipShape(Circle())
                 }
                 
-                HStack{
-                    Image(systemName: "magnifyingglass")
-                        .foregroundColor(.gray)
-                        .padding(.leading)
-                    
-                    TextField("Buscar categoria",text: $vmTodoHome.categoria)
-                    Spacer()
-                    Image(systemName: "slider.horizontal.3")
-                        .foregroundColor(.gray)
-                        .padding(.trailing)
-                }
-                .frame(maxWidth: .infinity,maxHeight: 40)
-                .clipShape(Rectangle())
-                .background(.white)
-                .cornerRadius(10)
+//                HStack{
+//                    Image(systemName: "magnifyingglass")
+//                        .foregroundColor(.gray)
+//                        .padding(.leading)
+//                    
+//                    TextField("Buscar categoria",text: $vmTodoHome.categoria)
+//                    Spacer()
+//                    Image(systemName: "slider.horizontal.3")
+//                        .foregroundColor(.gray)
+//                        .padding(.trailing)
+//                }
+//                .frame(maxWidth: .infinity,maxHeight: 40)
+//                .clipShape(Rectangle())
+//                .background(.white)
+//                .cornerRadius(10)
                 
                 Text("Listas")
                     .font(.system(size:20))
@@ -94,6 +108,7 @@ struct TodoHomeView: View {
                 Spacer()
             }
             .padding(.horizontal)
+            .padding(.top, 48)
             
             Button(action:{ router.navigate(to: .createAndModifyToDo) },label: {
                 Image(systemName: "plus")
