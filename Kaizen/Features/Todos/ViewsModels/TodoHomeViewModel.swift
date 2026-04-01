@@ -72,6 +72,7 @@ class TodoHomeViewModel:ObservableObject{
     func showCurrentList(currentList:ListEntity){
         isModify = true
         self.currentList = currentList
+        self.currentColor = Color(hex: currentList.color)
         Router.shared.navigate(to: .createAndModifyToDo)
     }
     

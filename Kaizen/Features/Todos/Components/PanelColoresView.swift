@@ -6,7 +6,7 @@ struct PanelColoresView: View {
         .blue,
         .yellow,
         .green,
-        .pink,
+        .orange,
     ]
     @Binding var currentColor: Color
     var body: some View {
