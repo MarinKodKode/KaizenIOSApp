@@ -7,24 +7,22 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		E96AFD7F2F7DA7B40075BAA1 /* TodoModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E96AFD7E2F7DA7B40075BAA1 /* TodoModel.swift */; };
+		E96AFD812F7DA81C0075BAA1 /* TodoEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = E96AFD802F7DA81C0075BAA1 /* TodoEntity.swift */; };
+		E96AFD842F7DA8A60075BAA1 /* ListMapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = E96AFD832F7DA8A60075BAA1 /* ListMapper.swift */; };
+		E96AFD872F7DC2D50075BAA1 /* Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = E96AFD862F7DC2D50075BAA1 /* Utils.swift */; };
+		E96AFD892F7DC8C20075BAA1 /* ListRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = E96AFD882F7DC8C20075BAA1 /* ListRepository.swift */; };
 		E997E7102F7C974300DD0CEB /* TodoHomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E997E6F82F7C974300DD0CEB /* TodoHomeViewModel.swift */; };
 		E997E7112F7C974300DD0CEB /* TodoHomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E997E6FD2F7C974300DD0CEB /* TodoHomeView.swift */; };
 		E997E7122F7C974300DD0CEB /* ColorOptionModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E997E6FA2F7C974300DD0CEB /* ColorOptionModel.swift */; };
-		E997E7132F7C974300DD0CEB /* ToDoModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E997E7092F7C974300DD0CEB /* ToDoModel.swift */; };
 		E997E7142F7C974300DD0CEB /* CardBigView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E997E6F22F7C974300DD0CEB /* CardBigView.swift */; };
 		E997E7152F7C974300DD0CEB /* CardMiddleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E997E6F12F7C974300DD0CEB /* CardMiddleView.swift */; };
 		E997E7162F7C974300DD0CEB /* CreateTodoListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E997E6FE2F7C974300DD0CEB /* CreateTodoListView.swift */; };
-		E997E7172F7C974300DD0CEB /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E997E70B2F7C974300DD0CEB /* HomeView.swift */; };
 		E997E7182F7C974300DD0CEB /* CrearTareaView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E997E6F62F7C974300DD0CEB /* CrearTareaView.swift */; };
-		E997E7192F7C974300DD0CEB /* CardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E997E7032F7C974300DD0CEB /* CardView.swift */; };
 		E997E71A2F7C974300DD0CEB /* PanelColoresView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E997E6F52F7C974300DD0CEB /* PanelColoresView.swift */; };
-		E997E71B2F7C974300DD0CEB /* CardPractice.swift in Sources */ = {isa = PBXBuildFile; fileRef = E997E7012F7C974300DD0CEB /* CardPractice.swift */; };
 		E997E71C2F7C974300DD0CEB /* ListaModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E997E6FB2F7C974300DD0CEB /* ListaModel.swift */; };
-		E997E71D2F7C974300DD0CEB /* TodoRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = E997E7052F7C974300DD0CEB /* TodoRepository.swift */; };
 		E997E71E2F7C974300DD0CEB /* CardListaView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E997E6F32F7C974300DD0CEB /* CardListaView.swift */; };
 		E997E71F2F7C974300DD0CEB /* CardSmallView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E997E6F02F7C974300DD0CEB /* CardSmallView.swift */; };
-		E997E7202F7C974300DD0CEB /* CreateToDoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E997E70C2F7C974300DD0CEB /* CreateToDoView.swift */; };
-		E997E7212F7C974300DD0CEB /* TodoViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E997E7072F7C974300DD0CEB /* TodoViewModel.swift */; };
 		E997E7222F7C974300DD0CEB /* CrearListaTareaView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E997E6F42F7C974300DD0CEB /* CrearListaTareaView.swift */; };
 		E9FA20F92F75943000D9D5D4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E9FA20F52F75943000D9D5D4 /* Assets.xcassets */; };
 		E9FA20FA2F75943000D9D5D4 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9FA20F62F75943000D9D5D4 /* ContentView.swift */; };
@@ -32,11 +30,16 @@
 		E9FA21072F75953F00D9D5D4 /* Router.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9FA21062F75953F00D9D5D4 /* Router.swift */; };
 		E9FA21092F7595C800D9D5D4 /* Routes.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9FA21082F7595C800D9D5D4 /* Routes.swift */; };
 		E9FA21102F75A42600D9D5D4 /* BackButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9FA210F2F75A42600D9D5D4 /* BackButtonView.swift */; };
-		E9FA21192F75DD7C00D9D5D4 /* ToDo.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9FA21182F75DD7C00D9D5D4 /* ToDo.swift */; };
+		E9FA21192F75DD7C00D9D5D4 /* ListEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9FA21182F75DD7C00D9D5D4 /* ListEntity.swift */; };
 		E9FA211B2F75DE3400D9D5D4 /* PersistenceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9FA211A2F75DE3400D9D5D4 /* PersistenceController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		E96AFD7E2F7DA7B40075BAA1 /* TodoModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodoModel.swift; sourceTree = "<group>"; };
+		E96AFD802F7DA81C0075BAA1 /* TodoEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodoEntity.swift; sourceTree = "<group>"; };
+		E96AFD832F7DA8A60075BAA1 /* ListMapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListMapper.swift; sourceTree = "<group>"; };
+		E96AFD862F7DC2D50075BAA1 /* Utils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Utils.swift; sourceTree = "<group>"; };
+		E96AFD882F7DC8C20075BAA1 /* ListRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListRepository.swift; sourceTree = "<group>"; };
 		E997E6F02F7C974300DD0CEB /* CardSmallView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardSmallView.swift; sourceTree = "<group>"; };
 		E997E6F12F7C974300DD0CEB /* CardMiddleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardMiddleView.swift; sourceTree = "<group>"; };
 		E997E6F22F7C974300DD0CEB /* CardBigView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardBigView.swift; sourceTree = "<group>"; };
@@ -49,13 +52,6 @@
 		E997E6FB2F7C974300DD0CEB /* ListaModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListaModel.swift; sourceTree = "<group>"; };
 		E997E6FD2F7C974300DD0CEB /* TodoHomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodoHomeView.swift; sourceTree = "<group>"; };
 		E997E6FE2F7C974300DD0CEB /* CreateTodoListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateTodoListView.swift; sourceTree = "<group>"; };
-		E997E7012F7C974300DD0CEB /* CardPractice.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardPractice.swift; sourceTree = "<group>"; };
-		E997E7032F7C974300DD0CEB /* CardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardView.swift; sourceTree = "<group>"; };
-		E997E7052F7C974300DD0CEB /* TodoRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodoRepository.swift; sourceTree = "<group>"; };
-		E997E7072F7C974300DD0CEB /* TodoViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodoViewModel.swift; sourceTree = "<group>"; };
-		E997E7092F7C974300DD0CEB /* ToDoModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToDoModel.swift; sourceTree = "<group>"; };
-		E997E70B2F7C974300DD0CEB /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
-		E997E70C2F7C974300DD0CEB /* CreateToDoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateToDoView.swift; sourceTree = "<group>"; };
 		E9FA20E52F75929700D9D5D4 /* Kaizen.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Kaizen.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E9FA20F52F75943000D9D5D4 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		E9FA20F62F75943000D9D5D4 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -63,7 +59,7 @@
 		E9FA21062F75953F00D9D5D4 /* Router.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Router.swift; sourceTree = "<group>"; };
 		E9FA21082F7595C800D9D5D4 /* Routes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Routes.swift; sourceTree = "<group>"; };
 		E9FA210F2F75A42600D9D5D4 /* BackButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BackButtonView.swift; sourceTree = "<group>"; };
-		E9FA21182F75DD7C00D9D5D4 /* ToDo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToDo.swift; sourceTree = "<group>"; };
+		E9FA21182F75DD7C00D9D5D4 /* ListEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListEntity.swift; sourceTree = "<group>"; };
 		E9FA211A2F75DE3400D9D5D4 /* PersistenceController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersistenceController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -78,6 +74,22 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		E96AFD822F7DA88C0075BAA1 /* Mapper */ = {
+			isa = PBXGroup;
+			children = (
+				E96AFD832F7DA8A60075BAA1 /* ListMapper.swift */,
+			);
+			path = Mapper;
+			sourceTree = "<group>";
+		};
+		E96AFD852F7DC2CB0075BAA1 /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				E96AFD862F7DC2D50075BAA1 /* Utils.swift */,
+			);
+			path = Utils;
+			sourceTree = "<group>";
+		};
 		E997E6EF2F7C974300DD0CEB /* Repository */ = {
 			isa = PBXGroup;
 			children = (
@@ -95,6 +107,7 @@
 				E997E6F42F7C974300DD0CEB /* CrearListaTareaView.swift */,
 				E997E6F52F7C974300DD0CEB /* PanelColoresView.swift */,
 				E997E6F62F7C974300DD0CEB /* CrearTareaView.swift */,
+				E96AFD882F7DC8C20075BAA1 /* ListRepository.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -112,6 +125,7 @@
 			children = (
 				E997E6FA2F7C974300DD0CEB /* ColorOptionModel.swift */,
 				E997E6FB2F7C974300DD0CEB /* ListaModel.swift */,
+				E96AFD7E2F7DA7B40075BAA1 /* TodoModel.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -137,73 +151,10 @@
 			path = Todos;
 			sourceTree = "<group>";
 		};
-		E997E7022F7C974300DD0CEB /* Practicas */ = {
-			isa = PBXGroup;
-			children = (
-				E997E7012F7C974300DD0CEB /* CardPractice.swift */,
-			);
-			path = Practicas;
-			sourceTree = "<group>";
-		};
-		E997E7042F7C974300DD0CEB /* Components */ = {
-			isa = PBXGroup;
-			children = (
-				E997E7032F7C974300DD0CEB /* CardView.swift */,
-			);
-			path = Components;
-			sourceTree = "<group>";
-		};
-		E997E7062F7C974300DD0CEB /* Repository */ = {
-			isa = PBXGroup;
-			children = (
-				E997E7052F7C974300DD0CEB /* TodoRepository.swift */,
-			);
-			path = Repository;
-			sourceTree = "<group>";
-		};
-		E997E7082F7C974300DD0CEB /* ViewModels */ = {
-			isa = PBXGroup;
-			children = (
-				E997E7072F7C974300DD0CEB /* TodoViewModel.swift */,
-			);
-			path = ViewModels;
-			sourceTree = "<group>";
-		};
-		E997E70A2F7C974300DD0CEB /* Models */ = {
-			isa = PBXGroup;
-			children = (
-				E997E7092F7C974300DD0CEB /* ToDoModel.swift */,
-			);
-			path = Models;
-			sourceTree = "<group>";
-		};
-		E997E70D2F7C974300DD0CEB /* Views */ = {
-			isa = PBXGroup;
-			children = (
-				E997E70B2F7C974300DD0CEB /* HomeView.swift */,
-				E997E70C2F7C974300DD0CEB /* CreateToDoView.swift */,
-			);
-			path = Views;
-			sourceTree = "<group>";
-		};
-		E997E70E2F7C974300DD0CEB /* Notes */ = {
-			isa = PBXGroup;
-			children = (
-				E997E7042F7C974300DD0CEB /* Components */,
-				E997E7062F7C974300DD0CEB /* Repository */,
-				E997E7082F7C974300DD0CEB /* ViewModels */,
-				E997E70A2F7C974300DD0CEB /* Models */,
-				E997E70D2F7C974300DD0CEB /* Views */,
-			);
-			path = Notes;
-			sourceTree = "<group>";
-		};
 		E997E70F2F7C974300DD0CEB /* Features */ = {
 			isa = PBXGroup;
 			children = (
 				E997E7002F7C974300DD0CEB /* Todos */,
-				E997E7022F7C974300DD0CEB /* Practicas */,
-				E997E70E2F7C974300DD0CEB /* Notes */,
 			);
 			path = Features;
 			sourceTree = "<group>";
@@ -227,8 +178,9 @@
 		E9FA20F82F75943000D9D5D4 /* Kaizen */ = {
 			isa = PBXGroup;
 			children = (
+				E96AFD852F7DC2CB0075BAA1 /* Utils */,
 				E997E70F2F7C974300DD0CEB /* Features */,
-				E9FA21012F7594D500D9D5D4 /* Core */,
+				E9FA21012F7594D500D9D5D4 /* Data */,
 				E9FA21002F7594B900D9D5D4 /* Navigation */,
 				E9FA20FF2F7594A900D9D5D4 /* Shared */,
 				E9FA20F52F75943000D9D5D4 /* Assets.xcassets */,
@@ -255,13 +207,14 @@
 			path = Navigation;
 			sourceTree = "<group>";
 		};
-		E9FA21012F7594D500D9D5D4 /* Core */ = {
+		E9FA21012F7594D500D9D5D4 /* Data */ = {
 			isa = PBXGroup;
 			children = (
-				E9FA21172F75DD5E00D9D5D4 /* ToDo */,
+				E96AFD822F7DA88C0075BAA1 /* Mapper */,
+				E9FA21172F75DD5E00D9D5D4 /* Entities */,
 				E9FA211A2F75DE3400D9D5D4 /* PersistenceController.swift */,
 			);
-			path = Core;
+			path = Data;
 			sourceTree = "<group>";
 		};
 		E9FA210E2F75A41000D9D5D4 /* Components */ = {
@@ -272,12 +225,13 @@
 			path = Components;
 			sourceTree = "<group>";
 		};
-		E9FA21172F75DD5E00D9D5D4 /* ToDo */ = {
+		E9FA21172F75DD5E00D9D5D4 /* Entities */ = {
 			isa = PBXGroup;
 			children = (
-				E9FA21182F75DD7C00D9D5D4 /* ToDo.swift */,
+				E9FA21182F75DD7C00D9D5D4 /* ListEntity.swift */,
+				E96AFD802F7DA81C0075BAA1 /* TodoEntity.swift */,
 			);
-			path = ToDo;
+			path = Entities;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -356,24 +310,22 @@
 				E997E7102F7C974300DD0CEB /* TodoHomeViewModel.swift in Sources */,
 				E997E7112F7C974300DD0CEB /* TodoHomeView.swift in Sources */,
 				E997E7122F7C974300DD0CEB /* ColorOptionModel.swift in Sources */,
-				E997E7132F7C974300DD0CEB /* ToDoModel.swift in Sources */,
 				E997E7142F7C974300DD0CEB /* CardBigView.swift in Sources */,
 				E997E7152F7C974300DD0CEB /* CardMiddleView.swift in Sources */,
 				E997E7162F7C974300DD0CEB /* CreateTodoListView.swift in Sources */,
-				E997E7172F7C974300DD0CEB /* HomeView.swift in Sources */,
 				E997E7182F7C974300DD0CEB /* CrearTareaView.swift in Sources */,
-				E997E7192F7C974300DD0CEB /* CardView.swift in Sources */,
 				E997E71A2F7C974300DD0CEB /* PanelColoresView.swift in Sources */,
-				E997E71B2F7C974300DD0CEB /* CardPractice.swift in Sources */,
 				E997E71C2F7C974300DD0CEB /* ListaModel.swift in Sources */,
-				E997E71D2F7C974300DD0CEB /* TodoRepository.swift in Sources */,
 				E997E71E2F7C974300DD0CEB /* CardListaView.swift in Sources */,
 				E997E71F2F7C974300DD0CEB /* CardSmallView.swift in Sources */,
-				E997E7202F7C974300DD0CEB /* CreateToDoView.swift in Sources */,
-				E997E7212F7C974300DD0CEB /* TodoViewModel.swift in Sources */,
 				E997E7222F7C974300DD0CEB /* CrearListaTareaView.swift in Sources */,
+				E96AFD7F2F7DA7B40075BAA1 /* TodoModel.swift in Sources */,
 				E9FA211B2F75DE3400D9D5D4 /* PersistenceController.swift in Sources */,
-				E9FA21192F75DD7C00D9D5D4 /* ToDo.swift in Sources */,
+				E96AFD872F7DC2D50075BAA1 /* Utils.swift in Sources */,
+				E96AFD812F7DA81C0075BAA1 /* TodoEntity.swift in Sources */,
+				E96AFD842F7DA8A60075BAA1 /* ListMapper.swift in Sources */,
+				E9FA21192F75DD7C00D9D5D4 /* ListEntity.swift in Sources */,
+				E96AFD892F7DC8C20075BAA1 /* ListRepository.swift in Sources */,
 				E9FA21102F75A42600D9D5D4 /* BackButtonView.swift in Sources */,
 				E9FA21092F7595C800D9D5D4 /* Routes.swift in Sources */,
 				E9FA21072F75953F00D9D5D4 /* Router.swift in Sources */,

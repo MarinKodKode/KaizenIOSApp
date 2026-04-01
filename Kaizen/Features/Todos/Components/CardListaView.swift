@@ -9,8 +9,9 @@ import SwiftUI
 
 struct CardListaView: View {
     @EnvironmentObject var router:Router
-    @EnvironmentObject var todoVM:TodoHomeViewModel
-    var lista:TodoListModel
+    @ObservedObject var todoVM:TodoHomeViewModel
+    var lista:ListEntity
+    
     var body: some View {
         VStack(alignment: .leading,spacing: 4){
             Image(systemName: lista.image)
@@ -37,14 +38,15 @@ struct CardListaView: View {
         }
         .padding(.horizontal)
         .frame(width: 110, height: 130)
-        .background(lista.colorOption.color)
+        .background(Color(hex: lista.color))
         .cornerRadius(20)
         .onTapGesture {
             todoVM.showCurrentList(currentList: lista)
         }
     }
 }
-
-#Preview {
-    CardListaView(lista:TodoListModel(nombre: "Tareas De Casa", image: "house", colorOption: ColorOptionModel(color: .blue,isOpacity: false)))
-}
+//
+//#Preview {
+//    @StateObject var todoVM:TodoHomeViewModel = TodoHomeViewModel(repository: <#T##ListRepository#>)
+//    CardListaView(todoVM:todoVM,lista:TodoListModel(id: UUID(),nombre: "Tareas De Casa", image: "house", color: Color(.blue).toHex() ?? "", todos: []))
+//}

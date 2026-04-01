@@ -1,7 +1,7 @@
 import SwiftUI
 
 struct CrearTareaView:View {
-    @EnvironmentObject var todoVM:TodoHomeViewModel
+    @ObservedObject var todoVM:TodoHomeViewModel
     @Environment(\.dismiss) var dismiss
     @State var name:String = ""
     var body: some View {
@@ -72,6 +72,6 @@ struct ButtonRadioTodoView:View {
     }
 }
 
-#Preview {
-    CrearTareaView()
-}
+//#Preview {
+//    CrearTareaView()
+//}

@@ -3,25 +3,26 @@ import SwiftData
 struct ContentView: View {
     @Environment(\.modelContext) private var context
     @EnvironmentObject var router: Router
-    @EnvironmentObject var todoVm: TodoViewModel
+    @StateObject var todoVM:TodoHomeViewModel = TodoHomeViewModel()
+    
     var body: some View {
         ZStack {
             NavigationStack(path: $router.pathArray) {
-                TodoHomeView()
-//                    .task {
-//                        todoVm.setContext(context)
-//                    }
+                TodoHomeView(todoVM:todoVM)
                     .navigationDestination(for: Routes.self) { destination in
                         switch destination {
                         case .home:
-                            TodoHomeView()
+                            TodoHomeView(todoVM:todoVM)
                         case .createAndModifyToDo:
-                            CreateTodoListView()
+                            CreateTodoListView(todoVM: todoVM)
                                 .navigationBarBackButtonHidden(true)
                         default:
-                            Text("Sin definir destino")
+                            EmptyView()
                         }
                     }
+            }
+            .task {
+                todoVM.configure(context: context)
             }
         }
     }
@@ -29,8 +30,7 @@ struct ContentView: View {
 
 //#Preview {
 //    @StateObject var router = Router()
-//    @StateObject var todoVm = TodoViewModel()
+//    @StateObject var todoVm = TodoHomeViewModel()
 //    ContentView()
 //        .environmentObject(router)
-//        .environmentObject(todoVm)
 //}

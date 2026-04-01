@@ -9,26 +9,25 @@ import SwiftUI
 
 struct CreateTodoListView: View {
     @EnvironmentObject var router:Router
-    @EnvironmentObject var vmTodoHome:TodoHomeViewModel
+    @ObservedObject var todoVM:TodoHomeViewModel
     @State var crearList = true
     @State var crearTodo = false
     
     var body: some View {
         ZStack(alignment: .bottomTrailing){
             
-            Color(vmTodoHome.currentColor.color)
-                .opacity(vmTodoHome.currentColor.isOpacity ? 0.5 : 1)
+            Color(todoVM.currentColor)
                 .ignoresSafeArea()
             
             VStack(spacing:20){
                 HStack{
-                    if vmTodoHome.currentList != nil{
+                    if todoVM.currentList != nil{
                         BackButtonView(action: {
-                            vmTodoHome.defaultView()
+                            todoVM.defaultView()
                         })
                     }
                     
-                    Text(vmTodoHome.currentList?.nombre ?? "")
+                    Text(todoVM.currentList?.nombre ?? "")
                         .foregroundColor(.white)
                         .font(.title)
                         .bold()
@@ -37,8 +36,8 @@ struct CreateTodoListView: View {
                 }
                 
                 LazyVStack{
-                    ForEach(vmTodoHome.currentList?.todos ?? [], id: \.self) { todo in
-                        CardSmallView(todo: todo)
+                    ForEach(todoVM.currentList?.todos ?? [], id: \.self) { todo in
+                        CardSmallView(todoVM:todoVM ,todo: todo)
                     }
                 }
                 
@@ -60,25 +59,24 @@ struct CreateTodoListView: View {
             .padding()
             
         }.sheet(isPresented: $crearList){
-            CrearListaTareaView(currentColor:$vmTodoHome.currentColor)
+            CrearListaTareaView(todoVM: todoVM, currentColor:$todoVM.currentColor)
                 .interactiveDismissDisabled(true)
                 .presentationDetents([.fraction(0.25)])
         }
         .sheet(isPresented: $crearTodo){
-            CrearTareaView()
+            CrearTareaView(todoVM:todoVM)
                 .presentationDetents([.fraction(0.15)])
         }
         .onAppear{
-            crearList = vmTodoHome.isModify ? false : true
+            crearList = todoVM.isModify ? false : true
         }
     }
 }
 
-#Preview {
-    @StateObject var router = Router.shared
-    @StateObject var todo = TodoHomeViewModel()
-    
-    CreateTodoListView()
-        .environmentObject(router)
-        .environmentObject(todo)
-}
+//#Preview {
+//    @StateObject var router = Router.shared
+//    @StateObject var todo = TodoHomeViewModel()
+//    
+//    CreateTodoListView(todoVM:todo)
+//        .environmentObject(router)
+//}

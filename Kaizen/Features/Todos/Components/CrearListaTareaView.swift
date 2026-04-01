@@ -2,10 +2,10 @@ import SwiftUI
 
 struct CrearListaTareaView: View {
     @EnvironmentObject var router:Router
-    @EnvironmentObject var todoVM:TodoHomeViewModel
+    @ObservedObject var todoVM:TodoHomeViewModel
     @Environment(\.dismiss) var dismiss
     @State var title = ""
-    @Binding var currentColor:ColorOptionModel
+    @Binding var currentColor:Color
     var body: some View {
         VStack(alignment: .leading) {
             Text("Nueva Lista")
@@ -50,7 +50,8 @@ struct CrearListaTareaView: View {
     }
 }
 
-#Preview {
-    @State var currentColor: ColorOptionModel = ColorOptionModel()
-    CrearListaTareaView(currentColor: $currentColor)
-}
+//#Preview {
+//    @State var currentColor: Color = .blue
+//    @StateObject var todoVM:TodoHomeViewModel = TodoHomeViewModel()
+//    CrearListaTareaView(todoVM:todoVM,currentColor: $currentColor)
+//}

@@ -1,19 +1,25 @@
 import Foundation
 import Combine
 import SwiftUI
+import SwiftData
 
 class TodoHomeViewModel:ObservableObject{
-    @Published var listas:[TodoListModel] = [
-//        TodoListModel(nombre: "Desing", image: "paintbrush.pointed.fill",colorOption: ColorOptionModel(color: .red,isOpacity: false)),
-//        TodoListModel(nombre: "Meeting", image: "person.3.fill",colorOption: ColorOptionModel(color: .orange,isOpacity: false)),
-//        TodoListModel(nombre: "Learning", image: "brain",colorOption: ColorOptionModel(color: .green,isOpacity: false)),
-    ]
+    @Published var listas:[ListEntity] = []
     @Published var title = "Lista sin titulo"
     @Published var categoria = ""
-//    @Published var crearTodo:Bool = true
-    @Published var currentColor: ColorOptionModel = ColorOptionModel()
-    @Published var currentList:TodoListModel?
+    @Published var currentColor: Color = .red
+    @Published var currentList:ListEntity?
     @Published var isModify:Bool = false
+    
+    private var repository:ListRepository?
+    
+    init(){
+        
+    }
+    
+    func configure(context: ModelContext){
+        self.repository = ListRepository(context: context)
+    }
     
     func defaultView(){
         Router.shared.popToRoot()
@@ -22,32 +28,54 @@ class TodoHomeViewModel:ObservableObject{
         isModify = false
     }
     
-    func createNewList(title:String,color:ColorOptionModel){
-        let titleF = title.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty ? "Pendientes" : title.trimmingCharacters(in: .whitespacesAndNewlines)
-        let newList = TodoListModel(nombre: titleF, image: "house", colorOption: color)
-        listas.append(newList)
+    func loadLists(){
+        guard let repo = repository else {
+            return
+        }
+        
+        listas = repo.getLists()
+    }
+    
+    func createNewList(title:String,color:Color){
+//        let titleF = title.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty ? "Pendientes" : title.trimmingCharacters(in: .whitespacesAndNewlines)
+//        let newList = TodoListModel(id:UUID(),nombre: titleF, image: "house", color: color.toHex() ?? "",todos: [])
+//        listas.append(newList)
+//        currentList = newList
+//        self.title = title
+        guard let repo = repository else {
+            return
+        }
+        let newList = ListEntity(nombre: title, image: "house", color: color.toHex() ?? "")
+        repo.addList(list: newList)
+        self.title
         currentList = newList
-        self.title = title
+        loadLists()
     }
     
     func createNewTodo(name:String){
-        let newTodo = TodoModel(todoName: name,completed: false,favorites: false,date: Date())
-        guard let current = currentList else{
+//        let newTodo = TodoModel(todoName: name,completed: false,favorites: false,date: Date())
+//        guard let current = currentList else{
+//            return
+//        }
+//        if let index = listas.lastIndex(of: current) {
+//            currentList?.todos.append(newTodo)
+//            listas[index].todos.append(newTodo)
+//        }
+        
+        guard let repo = repository, let current = currentList else{
             return
         }
-        if let index = listas.lastIndex(of: current) {
-            currentList?.todos.append(newTodo)
-            listas[index].todos.append(newTodo)
-        }
+        let todo = TodoEntity(todoName: name, completed: false, favorites: false, date: Date(),list:currentList)
+        repo.addTodo(todo: todo, currentList: current)
     }
     
-    func showCurrentList(currentList:TodoListModel){
+    func showCurrentList(currentList:ListEntity){
         isModify = true
         self.currentList = currentList
         Router.shared.navigate(to: .createAndModifyToDo)
     }
     
-    func taskCompleted(currentTask:TodoModel){
+    func taskCompleted(currentTask:TodoEntity){
         let value = !currentTask.completed
         guard let current = currentList else{
             return
@@ -60,7 +88,7 @@ class TodoHomeViewModel:ObservableObject{
         }
     }
     
-    func getCountTaskCompleted(lista:TodoListModel) -> Int {
+    func getCountTaskCompleted(lista:ListEntity) -> Int {
         let count = lista.todos.filter { !$0.completed }.count
         return count
     }
