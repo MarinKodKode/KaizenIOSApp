@@ -11,6 +11,8 @@ struct TodoListModel: Identifiable,Hashable{
 
 struct TodoModel:Identifiable,Hashable{
     let id:String = UUID().uuidString
-    let todoName:String
-    let date:Date
+    var todoName:String = ""
+    var completed:Bool = false
+    var favorites:Bool = false
+    var date:Date = Date()
 }

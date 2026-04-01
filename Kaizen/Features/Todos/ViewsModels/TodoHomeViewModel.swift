@@ -31,7 +31,7 @@ class TodoHomeViewModel:ObservableObject{
     }
     
     func createNewTodo(name:String){
-        let newTodo = TodoModel(todoName: name, date: Date())
+        let newTodo = TodoModel(todoName: name,completed: false,favorites: false,date: Date())
         guard let current = currentList else{
             return
         }
@@ -45,5 +45,23 @@ class TodoHomeViewModel:ObservableObject{
         isModify = true
         self.currentList = currentList
         Router.shared.navigate(to: .createAndModifyToDo)
+    }
+    
+    func taskCompleted(currentTask:TodoModel){
+        let value = !currentTask.completed
+        guard let current = currentList else{
+            return
+        }
+        if let index = listas.lastIndex(of: current), let indexTodos = current.todos.lastIndex(of: currentTask) {
+            var todoTemp = current.todos[indexTodos]
+            todoTemp.completed = value
+            currentList?.todos[indexTodos] = todoTemp
+            listas[index].todos[indexTodos] = todoTemp
+        }
+    }
+    
+    func getCountTaskCompleted(lista:TodoListModel) -> Int {
+        let count = lista.todos.filter { !$0.completed }.count
+        return count
     }
 }

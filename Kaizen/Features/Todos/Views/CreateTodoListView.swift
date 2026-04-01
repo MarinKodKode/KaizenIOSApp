@@ -38,7 +38,7 @@ struct CreateTodoListView: View {
                 
                 LazyVStack{
                     ForEach(vmTodoHome.currentList?.todos ?? [], id: \.self) { todo in
-                        CardSmallView(todoName:todo.todoName)
+                        CardSmallView(todo: todo)
                     }
                 }
                 

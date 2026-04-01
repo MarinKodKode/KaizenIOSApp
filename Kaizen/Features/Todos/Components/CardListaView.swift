@@ -25,7 +25,7 @@ struct CardListaView: View {
                 .bold()
                 .lineLimit(1)
             
-            Text("* \(lista.todos.count) Tareas")
+            Text("* \(todoVM.getCountTaskCompleted(lista:lista)) Tareas")
                 .font(.system(size: 10))
                 .foregroundColor(.white)
             

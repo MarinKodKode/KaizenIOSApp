@@ -8,27 +8,26 @@
 import SwiftUI
 
 struct CardSmallView:View {
-    var todoName:String
+    @EnvironmentObject var todoVM:TodoHomeViewModel
+    var todo:TodoModel
     @State var colorBell:Color = .gray
-    @State var completed = false
-    @State var favorite = false
     var body: some View {
         VStack(alignment:.leading,spacing: 10){
             HStack(){
-                Image(systemName: completed ? "checkmark.circle.fill" : "circle")
-                    .foregroundColor(completed ? .green : .gray)
+                Image(systemName: todo.completed ? "checkmark.circle.fill" : "circle")
+                    .foregroundColor(todo.completed ? .green : .gray)
                     .onTapGesture {
-                        completed.toggle()
+                        todoVM.taskCompleted(currentTask: todo)
                     }
-                Text(todoName)
+                Text(todo.todoName)
                     .foregroundColor(.gray)
                     .font(.footnote)
-                    .strikethrough(completed)
+                    .strikethrough(todo.completed)
                 Spacer()
-                Image(systemName: favorite ? "star.fill" : "star")
+                Image(systemName: todo.favorites ? "star.fill" : "star")
                     .foregroundColor(colorBell)
                     .onTapGesture {
-                        favorite.toggle()
+//                        todo.favorites.toggle()
                         if colorBell == .gray{
                             colorBell = .yellow
                         }else{
