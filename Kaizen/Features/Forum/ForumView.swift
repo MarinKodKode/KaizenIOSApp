@@ -9,12 +9,16 @@ import SwiftUI
 
 struct ForumView : View {
     var body: some View {
-        Text("Forum")
-            .font(.largeTitle)
-            .fontWeight(.semibold)
-        Text("Share with everyone")
-            .font(.subheadline)
-            .fontWeight(.regular)
+        
+        VStack {
+            Text("Forum")
+                .font(.largeTitle)
+                .fontWeight(.semibold)
+            Text("Share with everyone")
+                .font(.subheadline)
+                .fontWeight(.regular)
+        }
+        
     }
 }
 

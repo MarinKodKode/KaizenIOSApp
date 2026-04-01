@@ -9,12 +9,16 @@ import SwiftUI
 
 struct BuzzesView: View {
     var body: some View {
-        Text("Buzzes")
-            .font(.largeTitle)
-            .fontWeight(.semibold)
-        Text("Make the important buzz")
-            .font(.subheadline)
-            .fontWeight(.regular)
+        
+        VStack {
+            Text("Buzzes")
+                .font(.largeTitle)
+                .fontWeight(.semibold)
+            Text("Make the important buzz")
+                .font(.subheadline)
+                .fontWeight(.regular)
+        }
+        
     }
 }
 
