@@ -5,7 +5,7 @@ import SwiftData
 struct KaizenApp: App {
     
     @StateObject var router = Router.shared
-    @StateObject var todo = TodoViewModel()
+    @StateObject var todo = TodoHomeViewModel()
     
     var body: some Scene {
         WindowGroup {
