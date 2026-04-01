@@ -7,6 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		E899F7772F7D73C500A66C46 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E899F7752F7D73C500A66C46 /* Assets.xcassets */; };
+		E899F77B2F7D73ED00A66C46 /* Lottie in Frameworks */ = {isa = PBXBuildFile; productRef = E899F77A2F7D73ED00A66C46 /* Lottie */; };
+		E899FD7E2F7D77C800A66C46 /* MainTabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E899FD7D2F7D77C800A66C46 /* MainTabView.swift */; };
+		E899FD832F7D793C00A66C46 /* ForumView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E899FD822F7D793C00A66C46 /* ForumView.swift */; };
+		E899FD852F7D79E100A66C46 /* BuzzesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E899FD842F7D79E100A66C46 /* BuzzesView.swift */; };
+		E899FD872F7D7A0600A66C46 /* ProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E899FD862F7D7A0600A66C46 /* ProfileView.swift */; };
 		E997E7102F7C974300DD0CEB /* TodoHomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E997E6F82F7C974300DD0CEB /* TodoHomeViewModel.swift */; };
 		E997E7112F7C974300DD0CEB /* TodoHomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E997E6FD2F7C974300DD0CEB /* TodoHomeView.swift */; };
 		E997E7122F7C974300DD0CEB /* ColorOptionModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E997E6FA2F7C974300DD0CEB /* ColorOptionModel.swift */; };
@@ -26,7 +32,6 @@
 		E997E7202F7C974300DD0CEB /* CreateToDoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E997E70C2F7C974300DD0CEB /* CreateToDoView.swift */; };
 		E997E7212F7C974300DD0CEB /* TodoViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E997E7072F7C974300DD0CEB /* TodoViewModel.swift */; };
 		E997E7222F7C974300DD0CEB /* CrearListaTareaView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E997E6F42F7C974300DD0CEB /* CrearListaTareaView.swift */; };
-		E9FA20F92F75943000D9D5D4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E9FA20F52F75943000D9D5D4 /* Assets.xcassets */; };
 		E9FA20FA2F75943000D9D5D4 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9FA20F62F75943000D9D5D4 /* ContentView.swift */; };
 		E9FA20FB2F75943000D9D5D4 /* KaizenApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9FA20F72F75943000D9D5D4 /* KaizenApp.swift */; };
 		E9FA21072F75953F00D9D5D4 /* Router.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9FA21062F75953F00D9D5D4 /* Router.swift */; };
@@ -37,6 +42,11 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		E899F7752F7D73C500A66C46 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		E899FD7D2F7D77C800A66C46 /* MainTabView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabView.swift; sourceTree = "<group>"; };
+		E899FD822F7D793C00A66C46 /* ForumView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForumView.swift; sourceTree = "<group>"; };
+		E899FD842F7D79E100A66C46 /* BuzzesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BuzzesView.swift; sourceTree = "<group>"; };
+		E899FD862F7D7A0600A66C46 /* ProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileView.swift; sourceTree = "<group>"; };
 		E997E6F02F7C974300DD0CEB /* CardSmallView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardSmallView.swift; sourceTree = "<group>"; };
 		E997E6F12F7C974300DD0CEB /* CardMiddleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardMiddleView.swift; sourceTree = "<group>"; };
 		E997E6F22F7C974300DD0CEB /* CardBigView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardBigView.swift; sourceTree = "<group>"; };
@@ -57,7 +67,6 @@
 		E997E70B2F7C974300DD0CEB /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
 		E997E70C2F7C974300DD0CEB /* CreateToDoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateToDoView.swift; sourceTree = "<group>"; };
 		E9FA20E52F75929700D9D5D4 /* Kaizen.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Kaizen.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		E9FA20F52F75943000D9D5D4 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		E9FA20F62F75943000D9D5D4 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		E9FA20F72F75943000D9D5D4 /* KaizenApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KaizenApp.swift; sourceTree = "<group>"; };
 		E9FA21062F75953F00D9D5D4 /* Router.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Router.swift; sourceTree = "<group>"; };
@@ -72,12 +81,62 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E899F77B2F7D73ED00A66C46 /* Lottie in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		E899F7762F7D73C500A66C46 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				E899F7752F7D73C500A66C46 /* Assets.xcassets */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		E899F7782F7D73C800A66C46 /* App */ = {
+			isa = PBXGroup;
+			children = (
+				E9FA20F72F75943000D9D5D4 /* KaizenApp.swift */,
+			);
+			path = App;
+			sourceTree = "<group>";
+		};
+		E899FD7C2F7D77B400A66C46 /* Main */ = {
+			isa = PBXGroup;
+			children = (
+				E9FA20F62F75943000D9D5D4 /* ContentView.swift */,
+				E899FD7D2F7D77C800A66C46 /* MainTabView.swift */,
+			);
+			path = Main;
+			sourceTree = "<group>";
+		};
+		E899FD7F2F7D790B00A66C46 /* Buzzes */ = {
+			isa = PBXGroup;
+			children = (
+				E899FD842F7D79E100A66C46 /* BuzzesView.swift */,
+			);
+			path = Buzzes;
+			sourceTree = "<group>";
+		};
+		E899FD802F7D791200A66C46 /* Profile */ = {
+			isa = PBXGroup;
+			children = (
+				E899FD862F7D7A0600A66C46 /* ProfileView.swift */,
+			);
+			path = Profile;
+			sourceTree = "<group>";
+		};
+		E899FD812F7D791D00A66C46 /* Forum */ = {
+			isa = PBXGroup;
+			children = (
+				E899FD822F7D793C00A66C46 /* ForumView.swift */,
+			);
+			path = Forum;
+			sourceTree = "<group>";
+		};
 		E997E6EF2F7C974300DD0CEB /* Repository */ = {
 			isa = PBXGroup;
 			children = (
@@ -201,6 +260,10 @@
 		E997E70F2F7C974300DD0CEB /* Features */ = {
 			isa = PBXGroup;
 			children = (
+				E899FD812F7D791D00A66C46 /* Forum */,
+				E899FD802F7D791200A66C46 /* Profile */,
+				E899FD7F2F7D790B00A66C46 /* Buzzes */,
+				E899FD7C2F7D77B400A66C46 /* Main */,
 				E997E7002F7C974300DD0CEB /* Todos */,
 				E997E7022F7C974300DD0CEB /* Practicas */,
 				E997E70E2F7C974300DD0CEB /* Notes */,
@@ -227,13 +290,12 @@
 		E9FA20F82F75943000D9D5D4 /* Kaizen */ = {
 			isa = PBXGroup;
 			children = (
+				E899F7782F7D73C800A66C46 /* App */,
+				E899F7762F7D73C500A66C46 /* Resources */,
 				E997E70F2F7C974300DD0CEB /* Features */,
 				E9FA21012F7594D500D9D5D4 /* Core */,
 				E9FA21002F7594B900D9D5D4 /* Navigation */,
 				E9FA20FF2F7594A900D9D5D4 /* Shared */,
-				E9FA20F52F75943000D9D5D4 /* Assets.xcassets */,
-				E9FA20F62F75943000D9D5D4 /* ContentView.swift */,
-				E9FA20F72F75943000D9D5D4 /* KaizenApp.swift */,
 			);
 			path = Kaizen;
 			sourceTree = "<group>";
@@ -297,6 +359,7 @@
 			);
 			name = Kaizen;
 			packageProductDependencies = (
+				E899F77A2F7D73ED00A66C46 /* Lottie */,
 			);
 			productName = ToDoList;
 			productReference = E9FA20E52F75929700D9D5D4 /* Kaizen.app */;
@@ -326,6 +389,9 @@
 			);
 			mainGroup = E9FA20DC2F75929700D9D5D4;
 			minimizedProjectReferenceProxies = 1;
+			packageReferences = (
+				E899F7792F7D73ED00A66C46 /* XCRemoteSwiftPackageReference "lottie-spm" */,
+			);
 			preferredProjectObjectVersion = 77;
 			productRefGroup = E9FA20E62F75929700D9D5D4 /* Products */;
 			projectDirPath = "";
@@ -341,7 +407,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E9FA20F92F75943000D9D5D4 /* Assets.xcassets in Resources */,
+				E899F7772F7D73C500A66C46 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -354,16 +420,19 @@
 			files = (
 				E9FA20FA2F75943000D9D5D4 /* ContentView.swift in Sources */,
 				E997E7102F7C974300DD0CEB /* TodoHomeViewModel.swift in Sources */,
+				E899FD7E2F7D77C800A66C46 /* MainTabView.swift in Sources */,
 				E997E7112F7C974300DD0CEB /* TodoHomeView.swift in Sources */,
 				E997E7122F7C974300DD0CEB /* ColorOptionModel.swift in Sources */,
 				E997E7132F7C974300DD0CEB /* ToDoModel.swift in Sources */,
 				E997E7142F7C974300DD0CEB /* CardBigView.swift in Sources */,
 				E997E7152F7C974300DD0CEB /* CardMiddleView.swift in Sources */,
+				E899FD832F7D793C00A66C46 /* ForumView.swift in Sources */,
 				E997E7162F7C974300DD0CEB /* CreateTodoListView.swift in Sources */,
 				E997E7172F7C974300DD0CEB /* HomeView.swift in Sources */,
 				E997E7182F7C974300DD0CEB /* CrearTareaView.swift in Sources */,
 				E997E7192F7C974300DD0CEB /* CardView.swift in Sources */,
 				E997E71A2F7C974300DD0CEB /* PanelColoresView.swift in Sources */,
+				E899FD852F7D79E100A66C46 /* BuzzesView.swift in Sources */,
 				E997E71B2F7C974300DD0CEB /* CardPractice.swift in Sources */,
 				E997E71C2F7C974300DD0CEB /* ListaModel.swift in Sources */,
 				E997E71D2F7C974300DD0CEB /* TodoRepository.swift in Sources */,
@@ -371,6 +440,7 @@
 				E997E71F2F7C974300DD0CEB /* CardSmallView.swift in Sources */,
 				E997E7202F7C974300DD0CEB /* CreateToDoView.swift in Sources */,
 				E997E7212F7C974300DD0CEB /* TodoViewModel.swift in Sources */,
+				E899FD872F7D7A0600A66C46 /* ProfileView.swift in Sources */,
 				E997E7222F7C974300DD0CEB /* CrearListaTareaView.swift in Sources */,
 				E9FA211B2F75DE3400D9D5D4 /* PersistenceController.swift in Sources */,
 				E9FA21192F75DD7C00D9D5D4 /* ToDo.swift in Sources */,
@@ -593,6 +663,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		E899F7792F7D73ED00A66C46 /* XCRemoteSwiftPackageReference "lottie-spm" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/airbnb/lottie-spm.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 4.6.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		E899F77A2F7D73ED00A66C46 /* Lottie */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = E899F7792F7D73ED00A66C46 /* XCRemoteSwiftPackageReference "lottie-spm" */;
+			productName = Lottie;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = E9FA20DD2F75929700D9D5D4 /* Project object */;
 }

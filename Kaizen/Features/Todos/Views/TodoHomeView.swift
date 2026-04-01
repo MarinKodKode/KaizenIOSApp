@@ -1,15 +1,25 @@
+//
+//  TodoHomeView.swift
+//  Kaizen App
+//
+//  Created by Lettuce, Gaona & KodKode on 30/03/26.
+//
+
 import SwiftUI
 import Combine
 
 struct TodoHomeView: View {
-    //Properties wrappers
-    @EnvironmentObject var router:Router
-    @EnvironmentObject var vmTodoHome:TodoHomeViewModel
     
-    //Constantes para UI
+    @EnvironmentObject private var router : Router
+    
+    @ObservedObject private var vmTodoHome : TodoHomeViewModel = TodoHomeViewModel()
+    
     let gridItems = [GridItem(.flexible())]
+    
     let bgColor:Color = .beige
+    
     let fgColorText:Color = .black
+    
     let bgColorButtonCrear:Color = .bruguer
     
     var body: some View{
@@ -102,10 +112,5 @@ struct TodoHomeView: View {
 }
 
 #Preview {
-    @StateObject var router = Router.shared
-    @StateObject var todo = TodoHomeViewModel()
-    
     TodoHomeView()
-        .environmentObject(router)
-        .environmentObject(todo)
 }
