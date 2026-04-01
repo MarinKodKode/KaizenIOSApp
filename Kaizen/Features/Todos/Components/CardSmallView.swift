@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct CardSmallView:View {
-    var todo:TodoModel
+    var todoName:String
     @State var colorBell:Color = .gray
     @State var completed = false
     @State var favorite = false
@@ -20,7 +20,7 @@ struct CardSmallView:View {
                     .onTapGesture {
                         completed.toggle()
                     }
-                Text(todo.description)
+                Text(todoName)
                     .foregroundColor(.gray)
                     .font(.footnote)
                     .strikethrough(completed)

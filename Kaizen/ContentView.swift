@@ -7,16 +7,17 @@ struct ContentView: View {
     var body: some View {
         ZStack {
             NavigationStack(path: $router.pathArray) {
-                HomeView()
-                    .task {
-                        todoVm.setContext(context)
-                    }
+                TodoHomeView()
+//                    .task {
+//                        todoVm.setContext(context)
+//                    }
                     .navigationDestination(for: Routes.self) { destination in
                         switch destination {
                         case .home:
-                            HomeView()
+                            TodoHomeView()
                         case .createAndModifyToDo:
-                            CreateToDoView()
+                            CreateTodoListView()
+                                .navigationBarBackButtonHidden(true)
                         default:
                             Text("Sin definir destino")
                         }

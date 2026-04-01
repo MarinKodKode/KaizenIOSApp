@@ -1,106 +1,111 @@
 import SwiftUI
+import Combine
 
 struct TodoHomeView: View {
-    @State var crearTodo = false
-    @State var title = ""
-    @State var descripcion = ""
-    let gridItems = [GridItem(.flexible())]
-    var todos = [
-        TodoModel(
-            title: "Tarea 1",
-            description: "esta es una descripcion de la tarea 1"
-        ),
-        TodoModel(
-            title: "Tarea 1",
-            description: "esta es una descripcion de la tarea 1"
-        ),
-        //                 TodoModel(title: "Tarea 1",description: "esta es una descripcion de la tarea 1"),
-        //                 TodoModel(title: "Tarea 1",description: "esta es una descripcion de la tarea 1"),
-        //                 TodoModel(title: "Tarea 1",description: "esta es una descripcion de la tarea 1"),
-        //                 TodoModel(title: "Tarea 1",description: "esta es una descripcion de la tarea 1"),
-        //                 TodoModel(title: "Tarea 1",description: "esta es una descripcion de la tarea 1"),
-        //                 TodoModel(title: "Tarea 1",description: "esta es una descripcion de la tarea 1"),
-        //                 TodoModel(title: "Tarea 1",description: "esta es una descripcion de la tarea 1"),
-        //                 TodoModel(title: "Tarea 1",description: "esta es una descripcion de la tarea 1"),
-        //                 TodoModel(title: "Tarea 1",description: "esta es una descripcion de la tarea 1"),
-        //                 TodoModel(title: "Tarea 1",description: "esta es una descripcion de la tarea 1"),
-        //                 TodoModel(title: "Tarea 1",description: "esta es una descripcion de la tarea 1"),
-        //                 TodoModel(title: "Tarea 1",description: "esta es una descripcion de la tarea 1"),
-        //                 TodoModel(title: "Tarea 1",description: "esta es una descripcion de la tarea 1"),
-        //                 TodoModel(title: "Tarea 1",description: "esta es una descripcion de la tarea 1"),
-        //                 TodoModel(title: "Tarea 1",description: "esta es una descripcion de la tarea 1"),
-        //                 TodoModel(title: "Tarea 1",description: "esta es una descripcion de la tarea 1"),
-        //                 TodoModel(title: "Tarea 1",description: "esta es una descripcion de la tarea 1"),
-        //                 TodoModel(title: "Tarea 1",description: "esta es una descripcion de la tarea 1"),
-        //                 TodoModel(title: "Tarea 1",description: "esta es una descripcion de la tarea 1"),
-        TodoModel(
-            title: "Tarea 1",
-            description: "esta es una descripcion de la tarea 1"
-        ),
-    ]
+    //Properties wrappers
+    @EnvironmentObject var router:Router
+    @EnvironmentObject var vmTodoHome:TodoHomeViewModel
     
-    var body: some View {
-        VStack {
-            HStack {
-                Text("Lista de tareas")
-                    .frame(maxWidth: .infinity, alignment: .leading)
-                    .font(.title)
-                    .bold()
-                Spacer()
-                Image(systemName: "plus")
-                    .onTapGesture {
-                        crearTodo = true
+    //Constantes para UI
+    let gridItems = [GridItem(.flexible())]
+    let bgColor:Color = .beige
+    let fgColorText:Color = .black
+    let bgColorButtonCrear:Color = .bruguer
+    
+    var body: some View{
+        ZStack(alignment: .bottomTrailing){
+            bgColor
+                .ignoresSafeArea()
+            
+            VStack(alignment: .leading, spacing:30){
+                HStack{
+                    VStack(alignment:.leading){
+                        Text("Hola!")
+                        Text("Ahmed Garcia")
                     }
+                    .font(.system(size:25).bold())
+                    .foregroundColor(fgColorText)
+                    
+                    Spacer()
+                    Image(systemName: "person.crop.square.fill")
+                        .resizable()
+                        .aspectRatio(contentMode: .fit)
+                        .frame(width: 60,height: 60)
+                        .foregroundColor(fgColorText)
+                }
+                
+                HStack{
+                    Image(systemName: "magnifyingglass")
+                        .foregroundColor(.gray)
+                        .padding(.leading)
+                    
+                    TextField("Buscar categoria",text: $vmTodoHome.categoria)
+                    Spacer()
+                    Image(systemName: "slider.horizontal.3")
+                        .foregroundColor(.gray)
+                        .padding(.trailing)
+                }
+                .frame(maxWidth: .infinity,maxHeight: 40)
+                .clipShape(Rectangle())
+                .background(.white)
+                .cornerRadius(10)
+                
+                Text("Listas")
+                    .font(.system(size:20))
+                    .foregroundColor(fgColorText)
+                    .bold()
+                
+                if vmTodoHome.listas.isEmpty{
+                    
+                    VStack{
+                        Image(systemName: "tree")
+                             .resizable()
+                             .aspectRatio(contentMode: .fit)
+                             .frame(width: 150,height: 150)
+                         
+                         Text("""
+                             Todavia no hay ninguna lista de tareas.
+                             Pulsa + para empezar a planificar tus tareas
+                             """)
+                         .multilineTextAlignment(.center)
+                         .frame(maxWidth: .infinity)
+                    }
+                }else{
+                    ScrollView(.horizontal){
+                        LazyHStack(spacing:20){
+                            ForEach(vmTodoHome.listas, id: \.self) { lista in
+                                CardListaView(lista: lista)
+                            }
+                        }
+                    }
+                    .frame(height:150)
+                }
+                
+                Spacer()
             }
             .padding(.horizontal)
-            Divider()
-            ScrollView {
-                LazyVGrid(columns: gridItems) {
-                    ForEach(todos, id: \.self) { todo in
-                        CardSmallView(todo: todo)
-                    }
-                }.padding(.horizontal)
-            }
-            Spacer()
-        }
-            .sheet(isPresented: $crearTodo) {
-                CrearTodoView(
-                    title: $title,
-                    descripcion: $descripcion,
-                    crearTodo: $crearTodo
-                )
-            }
-    }
-}
-
-struct CrearTodoView: View {
-    @Binding var title: String
-    @Binding var descripcion: String
-    @Binding var crearTodo: Bool
-    var body: some View {
-        ZStack(alignment: .bottom){
-            VStack {
-                TextField("Titulo", text: $title)
-                    .font(.title)
-                    .bold()
-                    .padding(.top, 10)
-                    .padding(.vertical, 5)
-                Divider()
-                TextEditor(text: $descripcion)
-                Spacer()
-            }.padding(.horizontal)
             
-            Button("Crear",action:{})
+            Button(action:{ router.navigate(to: .createAndModifyToDo) },label: {
+                Image(systemName: "plus")
+                    .resizable()
+                    .aspectRatio(contentMode: .fill)
+                    .frame(width: 15,height: 15)
+                    .foregroundColor(.white)
+                    .padding()
+            })
+            .clipShape(Circle())
+            .background(bgColorButtonCrear)
+            .cornerRadius(10)
+            .padding()
         }
     }
-}
-
-struct TodoModel: Identifiable, Hashable {
-    var id: String = UUID().uuidString
-    var title: String = ""
-    var description: String = ""
 }
 
 #Preview {
+    @StateObject var router = Router.shared
+    @StateObject var todo = TodoHomeViewModel()
+    
     TodoHomeView()
+        .environmentObject(router)
+        .environmentObject(todo)
 }

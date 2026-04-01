@@ -7,48 +7,64 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		E9C72CA42F76FFF90061D276 /* CardSmallView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9C72CA32F76FFF90061D276 /* CardSmallView.swift */; };
-		E9C72CA62F77002F0061D276 /* CardMiddleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9C72CA52F77002F0061D276 /* CardMiddleView.swift */; };
-		E9C72CA82F7700560061D276 /* CardBigView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9C72CA72F7700560061D276 /* CardBigView.swift */; };
-		E9C72CAA2F7704780061D276 /* TodoHomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9C72CA92F7704780061D276 /* TodoHomeView.swift */; };
+		E997E7102F7C974300DD0CEB /* TodoHomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E997E6F82F7C974300DD0CEB /* TodoHomeViewModel.swift */; };
+		E997E7112F7C974300DD0CEB /* TodoHomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E997E6FD2F7C974300DD0CEB /* TodoHomeView.swift */; };
+		E997E7122F7C974300DD0CEB /* ColorOptionModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E997E6FA2F7C974300DD0CEB /* ColorOptionModel.swift */; };
+		E997E7132F7C974300DD0CEB /* ToDoModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E997E7092F7C974300DD0CEB /* ToDoModel.swift */; };
+		E997E7142F7C974300DD0CEB /* CardBigView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E997E6F22F7C974300DD0CEB /* CardBigView.swift */; };
+		E997E7152F7C974300DD0CEB /* CardMiddleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E997E6F12F7C974300DD0CEB /* CardMiddleView.swift */; };
+		E997E7162F7C974300DD0CEB /* CreateTodoListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E997E6FE2F7C974300DD0CEB /* CreateTodoListView.swift */; };
+		E997E7172F7C974300DD0CEB /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E997E70B2F7C974300DD0CEB /* HomeView.swift */; };
+		E997E7182F7C974300DD0CEB /* CrearTareaView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E997E6F62F7C974300DD0CEB /* CrearTareaView.swift */; };
+		E997E7192F7C974300DD0CEB /* CardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E997E7032F7C974300DD0CEB /* CardView.swift */; };
+		E997E71A2F7C974300DD0CEB /* PanelColoresView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E997E6F52F7C974300DD0CEB /* PanelColoresView.swift */; };
+		E997E71B2F7C974300DD0CEB /* CardPractice.swift in Sources */ = {isa = PBXBuildFile; fileRef = E997E7012F7C974300DD0CEB /* CardPractice.swift */; };
+		E997E71C2F7C974300DD0CEB /* ListaModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E997E6FB2F7C974300DD0CEB /* ListaModel.swift */; };
+		E997E71D2F7C974300DD0CEB /* TodoRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = E997E7052F7C974300DD0CEB /* TodoRepository.swift */; };
+		E997E71E2F7C974300DD0CEB /* CardListaView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E997E6F32F7C974300DD0CEB /* CardListaView.swift */; };
+		E997E71F2F7C974300DD0CEB /* CardSmallView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E997E6F02F7C974300DD0CEB /* CardSmallView.swift */; };
+		E997E7202F7C974300DD0CEB /* CreateToDoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E997E70C2F7C974300DD0CEB /* CreateToDoView.swift */; };
+		E997E7212F7C974300DD0CEB /* TodoViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E997E7072F7C974300DD0CEB /* TodoViewModel.swift */; };
+		E997E7222F7C974300DD0CEB /* CrearListaTareaView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E997E6F42F7C974300DD0CEB /* CrearListaTareaView.swift */; };
 		E9FA20F92F75943000D9D5D4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E9FA20F52F75943000D9D5D4 /* Assets.xcassets */; };
 		E9FA20FA2F75943000D9D5D4 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9FA20F62F75943000D9D5D4 /* ContentView.swift */; };
 		E9FA20FB2F75943000D9D5D4 /* KaizenApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9FA20F72F75943000D9D5D4 /* KaizenApp.swift */; };
 		E9FA21072F75953F00D9D5D4 /* Router.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9FA21062F75953F00D9D5D4 /* Router.swift */; };
 		E9FA21092F7595C800D9D5D4 /* Routes.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9FA21082F7595C800D9D5D4 /* Routes.swift */; };
-		E9FA210B2F759F1D00D9D5D4 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9FA210A2F759F1D00D9D5D4 /* HomeView.swift */; };
-		E9FA210D2F759F5300D9D5D4 /* CreateToDoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9FA210C2F759F5300D9D5D4 /* CreateToDoView.swift */; };
 		E9FA21102F75A42600D9D5D4 /* BackButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9FA210F2F75A42600D9D5D4 /* BackButtonView.swift */; };
-		E9FA21122F75B72300D9D5D4 /* ToDoModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9FA21112F75B72300D9D5D4 /* ToDoModel.swift */; };
-		E9FA21142F75B9D200D9D5D4 /* CardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9FA21132F75B9D200D9D5D4 /* CardView.swift */; };
-		E9FA21162F75BCCD00D9D5D4 /* TodoViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9FA21152F75BCCD00D9D5D4 /* TodoViewModel.swift */; };
 		E9FA21192F75DD7C00D9D5D4 /* ToDo.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9FA21182F75DD7C00D9D5D4 /* ToDo.swift */; };
 		E9FA211B2F75DE3400D9D5D4 /* PersistenceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9FA211A2F75DE3400D9D5D4 /* PersistenceController.swift */; };
-		E9FA211D2F75EABA00D9D5D4 /* TodoRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9FA211C2F75EABA00D9D5D4 /* TodoRepository.swift */; };
-		E9FA22092F76E14000D9D5D4 /* CardPractice.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9FA22082F76E14000D9D5D4 /* CardPractice.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		E9C72CA32F76FFF90061D276 /* CardSmallView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardSmallView.swift; sourceTree = "<group>"; };
-		E9C72CA52F77002F0061D276 /* CardMiddleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardMiddleView.swift; sourceTree = "<group>"; };
-		E9C72CA72F7700560061D276 /* CardBigView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardBigView.swift; sourceTree = "<group>"; };
-		E9C72CA92F7704780061D276 /* TodoHomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodoHomeView.swift; sourceTree = "<group>"; };
+		E997E6F02F7C974300DD0CEB /* CardSmallView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardSmallView.swift; sourceTree = "<group>"; };
+		E997E6F12F7C974300DD0CEB /* CardMiddleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardMiddleView.swift; sourceTree = "<group>"; };
+		E997E6F22F7C974300DD0CEB /* CardBigView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardBigView.swift; sourceTree = "<group>"; };
+		E997E6F32F7C974300DD0CEB /* CardListaView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardListaView.swift; sourceTree = "<group>"; };
+		E997E6F42F7C974300DD0CEB /* CrearListaTareaView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CrearListaTareaView.swift; sourceTree = "<group>"; };
+		E997E6F52F7C974300DD0CEB /* PanelColoresView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PanelColoresView.swift; sourceTree = "<group>"; };
+		E997E6F62F7C974300DD0CEB /* CrearTareaView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CrearTareaView.swift; sourceTree = "<group>"; };
+		E997E6F82F7C974300DD0CEB /* TodoHomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodoHomeViewModel.swift; sourceTree = "<group>"; };
+		E997E6FA2F7C974300DD0CEB /* ColorOptionModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorOptionModel.swift; sourceTree = "<group>"; };
+		E997E6FB2F7C974300DD0CEB /* ListaModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListaModel.swift; sourceTree = "<group>"; };
+		E997E6FD2F7C974300DD0CEB /* TodoHomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodoHomeView.swift; sourceTree = "<group>"; };
+		E997E6FE2F7C974300DD0CEB /* CreateTodoListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateTodoListView.swift; sourceTree = "<group>"; };
+		E997E7012F7C974300DD0CEB /* CardPractice.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardPractice.swift; sourceTree = "<group>"; };
+		E997E7032F7C974300DD0CEB /* CardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardView.swift; sourceTree = "<group>"; };
+		E997E7052F7C974300DD0CEB /* TodoRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodoRepository.swift; sourceTree = "<group>"; };
+		E997E7072F7C974300DD0CEB /* TodoViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodoViewModel.swift; sourceTree = "<group>"; };
+		E997E7092F7C974300DD0CEB /* ToDoModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToDoModel.swift; sourceTree = "<group>"; };
+		E997E70B2F7C974300DD0CEB /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
+		E997E70C2F7C974300DD0CEB /* CreateToDoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateToDoView.swift; sourceTree = "<group>"; };
 		E9FA20E52F75929700D9D5D4 /* Kaizen.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Kaizen.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E9FA20F52F75943000D9D5D4 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		E9FA20F62F75943000D9D5D4 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		E9FA20F72F75943000D9D5D4 /* KaizenApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KaizenApp.swift; sourceTree = "<group>"; };
 		E9FA21062F75953F00D9D5D4 /* Router.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Router.swift; sourceTree = "<group>"; };
 		E9FA21082F7595C800D9D5D4 /* Routes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Routes.swift; sourceTree = "<group>"; };
-		E9FA210A2F759F1D00D9D5D4 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
-		E9FA210C2F759F5300D9D5D4 /* CreateToDoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateToDoView.swift; sourceTree = "<group>"; };
 		E9FA210F2F75A42600D9D5D4 /* BackButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BackButtonView.swift; sourceTree = "<group>"; };
-		E9FA21112F75B72300D9D5D4 /* ToDoModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToDoModel.swift; sourceTree = "<group>"; };
-		E9FA21132F75B9D200D9D5D4 /* CardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardView.swift; sourceTree = "<group>"; };
-		E9FA21152F75BCCD00D9D5D4 /* TodoViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodoViewModel.swift; sourceTree = "<group>"; };
 		E9FA21182F75DD7C00D9D5D4 /* ToDo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToDo.swift; sourceTree = "<group>"; };
 		E9FA211A2F75DE3400D9D5D4 /* PersistenceController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersistenceController.swift; sourceTree = "<group>"; };
-		E9FA211C2F75EABA00D9D5D4 /* TodoRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodoRepository.swift; sourceTree = "<group>"; };
-		E9FA22082F76E14000D9D5D4 /* CardPractice.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardPractice.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -62,55 +78,134 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		E9C72C9C2F76FD550061D276 /* Todos */ = {
-			isa = PBXGroup;
-			children = (
-				E9C72CA22F76FF790061D276 /* Repository */,
-				E9C72CA12F76FF6F0061D276 /* Components */,
-				E9C72CA02F76FF650061D276 /* ViewsModels */,
-				E9C72C9F2F76FF600061D276 /* Models */,
-				E9C72C9E2F76FF590061D276 /* Views */,
-			);
-			path = Todos;
-			sourceTree = "<group>";
-		};
-		E9C72C9E2F76FF590061D276 /* Views */ = {
-			isa = PBXGroup;
-			children = (
-				E9C72CA92F7704780061D276 /* TodoHomeView.swift */,
-			);
-			path = Views;
-			sourceTree = "<group>";
-		};
-		E9C72C9F2F76FF600061D276 /* Models */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Models;
-			sourceTree = "<group>";
-		};
-		E9C72CA02F76FF650061D276 /* ViewsModels */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = ViewsModels;
-			sourceTree = "<group>";
-		};
-		E9C72CA12F76FF6F0061D276 /* Components */ = {
-			isa = PBXGroup;
-			children = (
-				E9C72CA32F76FFF90061D276 /* CardSmallView.swift */,
-				E9C72CA52F77002F0061D276 /* CardMiddleView.swift */,
-				E9C72CA72F7700560061D276 /* CardBigView.swift */,
-			);
-			path = Components;
-			sourceTree = "<group>";
-		};
-		E9C72CA22F76FF790061D276 /* Repository */ = {
+		E997E6EF2F7C974300DD0CEB /* Repository */ = {
 			isa = PBXGroup;
 			children = (
 			);
 			path = Repository;
+			sourceTree = "<group>";
+		};
+		E997E6F72F7C974300DD0CEB /* Components */ = {
+			isa = PBXGroup;
+			children = (
+				E997E6F02F7C974300DD0CEB /* CardSmallView.swift */,
+				E997E6F12F7C974300DD0CEB /* CardMiddleView.swift */,
+				E997E6F22F7C974300DD0CEB /* CardBigView.swift */,
+				E997E6F32F7C974300DD0CEB /* CardListaView.swift */,
+				E997E6F42F7C974300DD0CEB /* CrearListaTareaView.swift */,
+				E997E6F52F7C974300DD0CEB /* PanelColoresView.swift */,
+				E997E6F62F7C974300DD0CEB /* CrearTareaView.swift */,
+			);
+			path = Components;
+			sourceTree = "<group>";
+		};
+		E997E6F92F7C974300DD0CEB /* ViewsModels */ = {
+			isa = PBXGroup;
+			children = (
+				E997E6F82F7C974300DD0CEB /* TodoHomeViewModel.swift */,
+			);
+			path = ViewsModels;
+			sourceTree = "<group>";
+		};
+		E997E6FC2F7C974300DD0CEB /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				E997E6FA2F7C974300DD0CEB /* ColorOptionModel.swift */,
+				E997E6FB2F7C974300DD0CEB /* ListaModel.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		E997E6FF2F7C974300DD0CEB /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				E997E6FD2F7C974300DD0CEB /* TodoHomeView.swift */,
+				E997E6FE2F7C974300DD0CEB /* CreateTodoListView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		E997E7002F7C974300DD0CEB /* Todos */ = {
+			isa = PBXGroup;
+			children = (
+				E997E6EF2F7C974300DD0CEB /* Repository */,
+				E997E6F72F7C974300DD0CEB /* Components */,
+				E997E6F92F7C974300DD0CEB /* ViewsModels */,
+				E997E6FC2F7C974300DD0CEB /* Models */,
+				E997E6FF2F7C974300DD0CEB /* Views */,
+			);
+			path = Todos;
+			sourceTree = "<group>";
+		};
+		E997E7022F7C974300DD0CEB /* Practicas */ = {
+			isa = PBXGroup;
+			children = (
+				E997E7012F7C974300DD0CEB /* CardPractice.swift */,
+			);
+			path = Practicas;
+			sourceTree = "<group>";
+		};
+		E997E7042F7C974300DD0CEB /* Components */ = {
+			isa = PBXGroup;
+			children = (
+				E997E7032F7C974300DD0CEB /* CardView.swift */,
+			);
+			path = Components;
+			sourceTree = "<group>";
+		};
+		E997E7062F7C974300DD0CEB /* Repository */ = {
+			isa = PBXGroup;
+			children = (
+				E997E7052F7C974300DD0CEB /* TodoRepository.swift */,
+			);
+			path = Repository;
+			sourceTree = "<group>";
+		};
+		E997E7082F7C974300DD0CEB /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+				E997E7072F7C974300DD0CEB /* TodoViewModel.swift */,
+			);
+			path = ViewModels;
+			sourceTree = "<group>";
+		};
+		E997E70A2F7C974300DD0CEB /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				E997E7092F7C974300DD0CEB /* ToDoModel.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		E997E70D2F7C974300DD0CEB /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				E997E70B2F7C974300DD0CEB /* HomeView.swift */,
+				E997E70C2F7C974300DD0CEB /* CreateToDoView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		E997E70E2F7C974300DD0CEB /* Notes */ = {
+			isa = PBXGroup;
+			children = (
+				E997E7042F7C974300DD0CEB /* Components */,
+				E997E7062F7C974300DD0CEB /* Repository */,
+				E997E7082F7C974300DD0CEB /* ViewModels */,
+				E997E70A2F7C974300DD0CEB /* Models */,
+				E997E70D2F7C974300DD0CEB /* Views */,
+			);
+			path = Notes;
+			sourceTree = "<group>";
+		};
+		E997E70F2F7C974300DD0CEB /* Features */ = {
+			isa = PBXGroup;
+			children = (
+				E997E7002F7C974300DD0CEB /* Todos */,
+				E997E7022F7C974300DD0CEB /* Practicas */,
+				E997E70E2F7C974300DD0CEB /* Notes */,
+			);
+			path = Features;
 			sourceTree = "<group>";
 		};
 		E9FA20DC2F75929700D9D5D4 = {
@@ -129,53 +224,18 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
-		E9FA20F42F75943000D9D5D4 /* Views */ = {
-			isa = PBXGroup;
-			children = (
-				E9FA210A2F759F1D00D9D5D4 /* HomeView.swift */,
-				E9FA210C2F759F5300D9D5D4 /* CreateToDoView.swift */,
-			);
-			path = Views;
-			sourceTree = "<group>";
-		};
 		E9FA20F82F75943000D9D5D4 /* Kaizen */ = {
 			isa = PBXGroup;
 			children = (
+				E997E70F2F7C974300DD0CEB /* Features */,
 				E9FA21012F7594D500D9D5D4 /* Core */,
 				E9FA21002F7594B900D9D5D4 /* Navigation */,
 				E9FA20FF2F7594A900D9D5D4 /* Shared */,
-				E9FA20FE2F7594A300D9D5D4 /* Features */,
 				E9FA20F52F75943000D9D5D4 /* Assets.xcassets */,
 				E9FA20F62F75943000D9D5D4 /* ContentView.swift */,
 				E9FA20F72F75943000D9D5D4 /* KaizenApp.swift */,
 			);
 			path = Kaizen;
-			sourceTree = "<group>";
-		};
-		E9FA20FC2F75943600D9D5D4 /* Models */ = {
-			isa = PBXGroup;
-			children = (
-				E9FA21112F75B72300D9D5D4 /* ToDoModel.swift */,
-			);
-			path = Models;
-			sourceTree = "<group>";
-		};
-		E9FA20FD2F75943F00D9D5D4 /* ViewModels */ = {
-			isa = PBXGroup;
-			children = (
-				E9FA21152F75BCCD00D9D5D4 /* TodoViewModel.swift */,
-			);
-			path = ViewModels;
-			sourceTree = "<group>";
-		};
-		E9FA20FE2F7594A300D9D5D4 /* Features */ = {
-			isa = PBXGroup;
-			children = (
-				E9C72C9C2F76FD550061D276 /* Todos */,
-				E9FA22072F76E12F00D9D5D4 /* Practicas */,
-				E9FA21022F7594E300D9D5D4 /* Notes */,
-			);
-			path = Features;
 			sourceTree = "<group>";
 		};
 		E9FA20FF2F7594A900D9D5D4 /* Shared */ = {
@@ -204,34 +264,6 @@
 			path = Core;
 			sourceTree = "<group>";
 		};
-		E9FA21022F7594E300D9D5D4 /* Notes */ = {
-			isa = PBXGroup;
-			children = (
-				E9FA21042F75951500D9D5D4 /* Components */,
-				E9FA21032F75950F00D9D5D4 /* Repository */,
-				E9FA20FD2F75943F00D9D5D4 /* ViewModels */,
-				E9FA20FC2F75943600D9D5D4 /* Models */,
-				E9FA20F42F75943000D9D5D4 /* Views */,
-			);
-			path = Notes;
-			sourceTree = "<group>";
-		};
-		E9FA21032F75950F00D9D5D4 /* Repository */ = {
-			isa = PBXGroup;
-			children = (
-				E9FA211C2F75EABA00D9D5D4 /* TodoRepository.swift */,
-			);
-			path = Repository;
-			sourceTree = "<group>";
-		};
-		E9FA21042F75951500D9D5D4 /* Components */ = {
-			isa = PBXGroup;
-			children = (
-				E9FA21132F75B9D200D9D5D4 /* CardView.swift */,
-			);
-			path = Components;
-			sourceTree = "<group>";
-		};
 		E9FA210E2F75A41000D9D5D4 /* Components */ = {
 			isa = PBXGroup;
 			children = (
@@ -246,14 +278,6 @@
 				E9FA21182F75DD7C00D9D5D4 /* ToDo.swift */,
 			);
 			path = ToDo;
-			sourceTree = "<group>";
-		};
-		E9FA22072F76E12F00D9D5D4 /* Practicas */ = {
-			isa = PBXGroup;
-			children = (
-				E9FA22082F76E14000D9D5D4 /* CardPractice.swift */,
-			);
-			path = Practicas;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -328,23 +352,31 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E9FA211D2F75EABA00D9D5D4 /* TodoRepository.swift in Sources */,
 				E9FA20FA2F75943000D9D5D4 /* ContentView.swift in Sources */,
-				E9FA21142F75B9D200D9D5D4 /* CardView.swift in Sources */,
-				E9C72CA62F77002F0061D276 /* CardMiddleView.swift in Sources */,
-				E9FA21122F75B72300D9D5D4 /* ToDoModel.swift in Sources */,
-				E9C72CAA2F7704780061D276 /* TodoHomeView.swift in Sources */,
-				E9FA22092F76E14000D9D5D4 /* CardPractice.swift in Sources */,
+				E997E7102F7C974300DD0CEB /* TodoHomeViewModel.swift in Sources */,
+				E997E7112F7C974300DD0CEB /* TodoHomeView.swift in Sources */,
+				E997E7122F7C974300DD0CEB /* ColorOptionModel.swift in Sources */,
+				E997E7132F7C974300DD0CEB /* ToDoModel.swift in Sources */,
+				E997E7142F7C974300DD0CEB /* CardBigView.swift in Sources */,
+				E997E7152F7C974300DD0CEB /* CardMiddleView.swift in Sources */,
+				E997E7162F7C974300DD0CEB /* CreateTodoListView.swift in Sources */,
+				E997E7172F7C974300DD0CEB /* HomeView.swift in Sources */,
+				E997E7182F7C974300DD0CEB /* CrearTareaView.swift in Sources */,
+				E997E7192F7C974300DD0CEB /* CardView.swift in Sources */,
+				E997E71A2F7C974300DD0CEB /* PanelColoresView.swift in Sources */,
+				E997E71B2F7C974300DD0CEB /* CardPractice.swift in Sources */,
+				E997E71C2F7C974300DD0CEB /* ListaModel.swift in Sources */,
+				E997E71D2F7C974300DD0CEB /* TodoRepository.swift in Sources */,
+				E997E71E2F7C974300DD0CEB /* CardListaView.swift in Sources */,
+				E997E71F2F7C974300DD0CEB /* CardSmallView.swift in Sources */,
+				E997E7202F7C974300DD0CEB /* CreateToDoView.swift in Sources */,
+				E997E7212F7C974300DD0CEB /* TodoViewModel.swift in Sources */,
+				E997E7222F7C974300DD0CEB /* CrearListaTareaView.swift in Sources */,
 				E9FA211B2F75DE3400D9D5D4 /* PersistenceController.swift in Sources */,
-				E9C72CA82F7700560061D276 /* CardBigView.swift in Sources */,
 				E9FA21192F75DD7C00D9D5D4 /* ToDo.swift in Sources */,
 				E9FA21102F75A42600D9D5D4 /* BackButtonView.swift in Sources */,
 				E9FA21092F7595C800D9D5D4 /* Routes.swift in Sources */,
 				E9FA21072F75953F00D9D5D4 /* Router.swift in Sources */,
-				E9C72CA42F76FFF90061D276 /* CardSmallView.swift in Sources */,
-				E9FA210B2F759F1D00D9D5D4 /* HomeView.swift in Sources */,
-				E9FA210D2F759F5300D9D5D4 /* CreateToDoView.swift in Sources */,
-				E9FA21162F75BCCD00D9D5D4 /* TodoViewModel.swift in Sources */,
 				E9FA20FB2F75943000D9D5D4 /* KaizenApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
