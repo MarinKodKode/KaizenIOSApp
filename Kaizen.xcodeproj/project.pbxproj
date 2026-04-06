@@ -18,14 +18,16 @@
 		E997E7142F7C974300DD0CEB /* CardBigView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E997E6F22F7C974300DD0CEB /* CardBigView.swift */; };
 		E997E7152F7C974300DD0CEB /* CardMiddleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E997E6F12F7C974300DD0CEB /* CardMiddleView.swift */; };
 		E997E7162F7C974300DD0CEB /* CreateTodoListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E997E6FE2F7C974300DD0CEB /* CreateTodoListView.swift */; };
-		E997E7182F7C974300DD0CEB /* CrearTareaView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E997E6F62F7C974300DD0CEB /* CrearTareaView.swift */; };
+		E997E7182F7C974300DD0CEB /* AgregarTareaView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E997E6F62F7C974300DD0CEB /* AgregarTareaView.swift */; };
 		E997E71A2F7C974300DD0CEB /* PanelColoresView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E997E6F52F7C974300DD0CEB /* PanelColoresView.swift */; };
 		E997E71C2F7C974300DD0CEB /* ListaModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E997E6FB2F7C974300DD0CEB /* ListaModel.swift */; };
 		E997E71E2F7C974300DD0CEB /* CardListaView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E997E6F32F7C974300DD0CEB /* CardListaView.swift */; };
 		E997E71F2F7C974300DD0CEB /* CardSmallView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E997E6F02F7C974300DD0CEB /* CardSmallView.swift */; };
-		E997E7222F7C974300DD0CEB /* CrearListaTareaView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E997E6F42F7C974300DD0CEB /* CrearListaTareaView.swift */; };
+		E997E7222F7C974300DD0CEB /* AgregarListaView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E997E6F42F7C974300DD0CEB /* AgregarListaView.swift */; };
 		E9C985E32F840ECC00F3D2F5 /* CardStyles.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9C985E22F840ECC00F3D2F5 /* CardStyles.swift */; };
 		E9C985E52F840ED300F3D2F5 /* View+Card.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9C985E42F840ED300F3D2F5 /* View+Card.swift */; };
+		E9C985EA2F84386700F3D2F5 /* MejoraModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9C985E92F84386700F3D2F5 /* MejoraModel.swift */; };
+		E9C985EE2F843FF500F3D2F5 /* AgregarMejoraView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9C985ED2F843FF500F3D2F5 /* AgregarMejoraView.swift */; };
 		E9FA20F92F75943000D9D5D4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E9FA20F52F75943000D9D5D4 /* Assets.xcassets */; };
 		E9FA20FA2F75943000D9D5D4 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9FA20F62F75943000D9D5D4 /* ContentView.swift */; };
 		E9FA20FB2F75943000D9D5D4 /* KaizenApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9FA20F72F75943000D9D5D4 /* KaizenApp.swift */; };
@@ -46,9 +48,9 @@
 		E997E6F12F7C974300DD0CEB /* CardMiddleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardMiddleView.swift; sourceTree = "<group>"; };
 		E997E6F22F7C974300DD0CEB /* CardBigView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardBigView.swift; sourceTree = "<group>"; };
 		E997E6F32F7C974300DD0CEB /* CardListaView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardListaView.swift; sourceTree = "<group>"; };
-		E997E6F42F7C974300DD0CEB /* CrearListaTareaView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CrearListaTareaView.swift; sourceTree = "<group>"; };
+		E997E6F42F7C974300DD0CEB /* AgregarListaView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AgregarListaView.swift; sourceTree = "<group>"; };
 		E997E6F52F7C974300DD0CEB /* PanelColoresView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PanelColoresView.swift; sourceTree = "<group>"; };
-		E997E6F62F7C974300DD0CEB /* CrearTareaView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CrearTareaView.swift; sourceTree = "<group>"; };
+		E997E6F62F7C974300DD0CEB /* AgregarTareaView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AgregarTareaView.swift; sourceTree = "<group>"; };
 		E997E6F82F7C974300DD0CEB /* TodoHomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodoHomeViewModel.swift; sourceTree = "<group>"; };
 		E997E6FA2F7C974300DD0CEB /* ColorOptionModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorOptionModel.swift; sourceTree = "<group>"; };
 		E997E6FB2F7C974300DD0CEB /* ListaModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListaModel.swift; sourceTree = "<group>"; };
@@ -56,6 +58,8 @@
 		E997E6FE2F7C974300DD0CEB /* CreateTodoListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateTodoListView.swift; sourceTree = "<group>"; };
 		E9C985E22F840ECC00F3D2F5 /* CardStyles.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardStyles.swift; sourceTree = "<group>"; };
 		E9C985E42F840ED300F3D2F5 /* View+Card.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "View+Card.swift"; sourceTree = "<group>"; };
+		E9C985E92F84386700F3D2F5 /* MejoraModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MejoraModel.swift; sourceTree = "<group>"; };
+		E9C985ED2F843FF500F3D2F5 /* AgregarMejoraView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AgregarMejoraView.swift; sourceTree = "<group>"; };
 		E9FA20E52F75929700D9D5D4 /* Kaizen.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Kaizen.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E9FA20F52F75943000D9D5D4 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		E9FA20F62F75943000D9D5D4 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -97,6 +101,7 @@
 		E997E6EF2F7C974300DD0CEB /* Repository */ = {
 			isa = PBXGroup;
 			children = (
+				E96AFD882F7DC8C20075BAA1 /* ListRepository.swift */,
 			);
 			path = Repository;
 			sourceTree = "<group>";
@@ -108,10 +113,7 @@
 				E997E6F12F7C974300DD0CEB /* CardMiddleView.swift */,
 				E997E6F22F7C974300DD0CEB /* CardBigView.swift */,
 				E997E6F32F7C974300DD0CEB /* CardListaView.swift */,
-				E997E6F42F7C974300DD0CEB /* CrearListaTareaView.swift */,
 				E997E6F52F7C974300DD0CEB /* PanelColoresView.swift */,
-				E997E6F62F7C974300DD0CEB /* CrearTareaView.swift */,
-				E96AFD882F7DC8C20075BAA1 /* ListRepository.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -130,6 +132,7 @@
 				E997E6FA2F7C974300DD0CEB /* ColorOptionModel.swift */,
 				E997E6FB2F7C974300DD0CEB /* ListaModel.swift */,
 				E96AFD7E2F7DA7B40075BAA1 /* TodoModel.swift */,
+				E9C985E92F84386700F3D2F5 /* MejoraModel.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -137,6 +140,7 @@
 		E997E6FF2F7C974300DD0CEB /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				E9C985EB2F843F8200F3D2F5 /* Sheets */,
 				E997E6FD2F7C974300DD0CEB /* TodoHomeView.swift */,
 				E997E6FE2F7C974300DD0CEB /* CreateTodoListView.swift */,
 			);
@@ -194,6 +198,16 @@
 				E9C985E42F840ED300F3D2F5 /* View+Card.swift */,
 			);
 			path = Extensions;
+			sourceTree = "<group>";
+		};
+		E9C985EB2F843F8200F3D2F5 /* Sheets */ = {
+			isa = PBXGroup;
+			children = (
+				E997E6F42F7C974300DD0CEB /* AgregarListaView.swift */,
+				E997E6F62F7C974300DD0CEB /* AgregarTareaView.swift */,
+				E9C985ED2F843FF500F3D2F5 /* AgregarMejoraView.swift */,
+			);
+			path = Sheets;
 			sourceTree = "<group>";
 		};
 		E9FA20DC2F75929700D9D5D4 = {
@@ -348,16 +362,17 @@
 				E9FA20FA2F75943000D9D5D4 /* ContentView.swift in Sources */,
 				E997E7102F7C974300DD0CEB /* TodoHomeViewModel.swift in Sources */,
 				E997E7112F7C974300DD0CEB /* TodoHomeView.swift in Sources */,
+				E9C985EE2F843FF500F3D2F5 /* AgregarMejoraView.swift in Sources */,
 				E997E7122F7C974300DD0CEB /* ColorOptionModel.swift in Sources */,
 				E997E7142F7C974300DD0CEB /* CardBigView.swift in Sources */,
 				E997E7152F7C974300DD0CEB /* CardMiddleView.swift in Sources */,
 				E997E7162F7C974300DD0CEB /* CreateTodoListView.swift in Sources */,
-				E997E7182F7C974300DD0CEB /* CrearTareaView.swift in Sources */,
+				E997E7182F7C974300DD0CEB /* AgregarTareaView.swift in Sources */,
 				E997E71A2F7C974300DD0CEB /* PanelColoresView.swift in Sources */,
 				E997E71C2F7C974300DD0CEB /* ListaModel.swift in Sources */,
 				E997E71E2F7C974300DD0CEB /* CardListaView.swift in Sources */,
 				E997E71F2F7C974300DD0CEB /* CardSmallView.swift in Sources */,
-				E997E7222F7C974300DD0CEB /* CrearListaTareaView.swift in Sources */,
+				E997E7222F7C974300DD0CEB /* AgregarListaView.swift in Sources */,
 				E96AFD7F2F7DA7B40075BAA1 /* TodoModel.swift in Sources */,
 				E9FA211B2F75DE3400D9D5D4 /* PersistenceController.swift in Sources */,
 				E96AFD872F7DC2D50075BAA1 /* Utils.swift in Sources */,
@@ -369,6 +384,7 @@
 				E9FA21092F7595C800D9D5D4 /* Routes.swift in Sources */,
 				E9FA21072F75953F00D9D5D4 /* Router.swift in Sources */,
 				E9FA20FB2F75943000D9D5D4 /* KaizenApp.swift in Sources */,
+				E9C985EA2F84386700F3D2F5 /* MejoraModel.swift in Sources */,
 				E9C985E32F840ECC00F3D2F5 /* CardStyles.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

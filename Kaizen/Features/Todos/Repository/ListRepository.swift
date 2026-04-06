@@ -15,17 +15,25 @@ class ListRepository{
         self.context = context
     }
     
-    func getLists() -> [ListEntity]{
-        let descriptor = FetchDescriptor<ListEntity>()
-        return (try? context.fetch(descriptor)) ?? []
-    }
-    
     func addList(list:ListEntity){
         context.insert(list)
         do{
             try? context.save()
         }catch(let e){
             print("Error addList: \(e.localizedDescription)")
+        }
+    }
+    
+    func getLists() -> [ListEntity]{
+        let descriptor = FetchDescriptor<ListEntity>()
+        return (try? context.fetch(descriptor)) ?? []
+    }
+    
+    func modifyList(list:ListEntity,title:String,color:String){
+        list.nombre = title
+        list.color = color
+        do{
+            try? context.save()
         }
     }
     

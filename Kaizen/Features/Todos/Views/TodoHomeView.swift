@@ -11,7 +11,6 @@ struct TodoHomeView: View {
     //Properties wrappers
     @EnvironmentObject var router: Router
     @ObservedObject var todoVM: TodoHomeViewModel
-//    @State var categoria = ""
 
     var body: some View {
         ZStack(alignment: .bottomTrailing) {
@@ -138,7 +137,10 @@ struct PanelMejorasView: View {
                             .foregroundColor(.white)
                             .bold()
                             .padding(.horizontal)
-                            .cardRoundedRectangleStyle(bgColor: .bruguer, cornerRadius: 10)
+                            .cardRoundedRectangleStyle(bgColor: Color(hex: mejora.color), cornerRadius: 10)
+                            .onTapGesture {
+                                todoVM.modificatMejoraDatos(mejora:mejora)
+                            }
                     }
                 }
             }
@@ -161,10 +163,10 @@ struct CardMejoraEmptyView: View {
 
 struct ButtonAddMejoraView: View {
     @ObservedObject var todoVM:TodoHomeViewModel
-    @State var crearMejora:Bool = false
+    
     var body: some View {
         Button(
-            action: { crearMejora = true },
+            action: { todoVM.openMejora = true },
             label: {
                 VStack {
                     Text("Agrega una mejora")
@@ -183,9 +185,9 @@ struct ButtonAddMejoraView: View {
                 .cardRoundedRectangleStyle(bgColor: .white, cornerRadius: 10)
                 .cardDashStyle(dashColor: .black, cornerRadius: 10, dashLineWidth: 1.5, segmentDash: 6)
             })
-        .sheet(isPresented: $crearMejora) {
-            CrearMejoraView(todoVM:todoVM)
-                .presentationDetents([.fraction(0.10)])
+        .sheet(isPresented: $todoVM.openMejora) {
+            AgregarMejoraView(todoVM:todoVM)
+                .presentationDetents([.fraction(0.25)])
         }
     }
 }
@@ -198,52 +200,6 @@ struct HeaderText:View {
             .foregroundColor(fgColorText)
             .frame(maxWidth: .infinity, alignment: .leading)
     }
-}
-
-struct CrearMejoraView:View {
-    @Environment(\.dismiss) var dismiss
-    @ObservedObject var todoVM:TodoHomeViewModel
-    @State var descripcion:String = ""
-    var body: some View {
-        VStack(alignment: .leading) {
-            HStack{
-//                Image(systemName: "circle")
-//                    .resizable()
-//                    .aspectRatio(contentMode: .fit)
-//                    .frame(width: 20,height: 20)
-//                    .foregroundColor(.gray)
-                TextField("Agregar mejora", text: $descripcion)
-                Button(action:{
-                    //Agregar en mejoras
-                    todoVM.agregarMejora(descripcion:descripcion)
-                    dismiss()
-                },label:{
-                    Image(systemName: "arrowtriangle.up.square.fill")
-                        .resizable()
-                        .aspectRatio(contentMode: .fit)
-                        .frame(width: 25,height: 25)
-                })
-                .disabled(descripcion.isEmpty)
-            }
-            Divider()
-//            ScrollView(.horizontal,showsIndicators: false){
-//                HStack(spacing:20){
-//                    ButtonTextImage(text: "Definir fecha de vencimiento", image: "calendar")
-//                    ButtonTextImage(text: "Recordarme", image: "bell")
-//                    ButtonTextImage(text: "Repetir", image: "repeat")
-//                }
-//            }
-//            Spacer()
-        }
-        .frame(maxWidth: .infinity, maxHeight: .infinity)
-        .padding(.horizontal)
-        .background(.white)
-    }
-}
-
-struct MejoraModel: Identifiable{
-    var id:UUID = UUID()
-    var descripcion:String
 }
 
 #Preview {

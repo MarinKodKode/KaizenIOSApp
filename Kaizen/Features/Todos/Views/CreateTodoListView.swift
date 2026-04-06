@@ -10,8 +10,7 @@ import SwiftUI
 struct CreateTodoListView: View {
     @EnvironmentObject var router:Router
     @ObservedObject var todoVM:TodoHomeViewModel
-    @State var crearList = true
-    @State var crearTodo = false
+    
     
     var body: some View {
         ZStack(alignment: .bottomTrailing){
@@ -27,10 +26,13 @@ struct CreateTodoListView: View {
                         })
                     }
                     
-                    Text(todoVM.currentList?.nombre ?? "")
+                    Text(todoVM.currentList?.nombre ?? "Pendientes")
                         .foregroundColor(.white)
                         .font(.title)
                         .bold()
+                        .onTapGesture {
+                            todoVM.preModiciarLista()
+                        }
                     
                     Spacer()
                 }
@@ -45,7 +47,7 @@ struct CreateTodoListView: View {
             }.frame(maxWidth: .infinity,alignment: .leading)
                 .padding(.horizontal)
             
-            Button(action:{ crearTodo = true },label: {
+            Button(action:{ todoVM.crearTodo = true },label: {
                 Image(systemName: "plus")
                     .resizable()
                     .aspectRatio(contentMode: .fill)
@@ -58,25 +60,25 @@ struct CreateTodoListView: View {
             .cornerRadius(10)
             .padding()
             
-        }.sheet(isPresented: $crearList){
-            CrearListaTareaView(todoVM: todoVM, currentColor:$todoVM.currentColor)
+        }.sheet(isPresented: $todoVM.crearList){
+            AgregarListaView(todoVM: todoVM)
                 .interactiveDismissDisabled(true)
                 .presentationDetents([.fraction(0.25)])
         }
-        .sheet(isPresented: $crearTodo){
-            CrearTareaView(todoVM:todoVM)
+        .sheet(isPresented: $todoVM.crearTodo){
+            AgregarTareaView(todoVM:todoVM)
                 .presentationDetents([.fraction(0.15)])
         }
         .onAppear{
-            crearList = todoVM.isModify ? false : true
+            todoVM.crearList = todoVM.isModify ? false : true
         }
     }
 }
 
-//#Preview {
-//    @StateObject var router = Router.shared
-//    @StateObject var todo = TodoHomeViewModel()
-//    
-//    CreateTodoListView(todoVM:todo)
-//        .environmentObject(router)
-//}
+#Preview {
+    @StateObject var router = Router.shared
+    @StateObject var todo = TodoHomeViewModel()
+    
+    CreateTodoListView(todoVM:todo)
+        .environmentObject(router)
+}

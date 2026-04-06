@@ -21,7 +21,11 @@ struct PanelColoresView: View {
                         currentColor = color
                     }
                 }.onAppear {
-                    currentColor = colores[0]
+                    if let index = colores.lastIndex(of: currentColor) {
+                        currentColor = colores[index]
+                    }else{
+                        currentColor = colores[0]
+                    }
                 }
             }
         }

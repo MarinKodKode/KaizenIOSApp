@@ -4,13 +4,24 @@ import SwiftUI
 import SwiftData
 
 class TodoHomeViewModel:ObservableObject{
+    //Lista
     @Published var listas:[ListEntity] = []
-    @Published var mejoras:[MejoraModel] = []
-    @Published var title = "Lista sin titulo"
-    @Published var categoria = ""
+    @Published var title = ""
     @Published var currentColor: Color = .red
     @Published var currentList:ListEntity?
     @Published var isModify:Bool = false
+    @Published var isModifyList:Bool = false
+    @Published var crearList = true
+    
+    //Todo
+    @Published var crearTodo = false
+    
+    //Sheets Mejora
+    @Published var mejoras:[MejoraModel] = []
+    @Published var mejoraActual:MejoraModel?
+    @Published var descripcion:String = ""
+    @Published var seleccionado:Nivel = .bajo
+    @Published var openMejora:Bool = false
     
     private var repository:ListRepository?
     
@@ -24,9 +35,10 @@ class TodoHomeViewModel:ObservableObject{
     
     func defaultView(){
         Router.shared.popToRoot()
-        title = "Lista sin titulo"
+        title = ""
         currentList = nil
         isModify = false
+        mejoraActual = nil
     }
     
     func loadLists(){
@@ -37,37 +49,50 @@ class TodoHomeViewModel:ObservableObject{
         listas = repo.getLists()
     }
     
-    func createNewList(title:String,color:Color){
-//        let titleF = title.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty ? "Pendientes" : title.trimmingCharacters(in: .whitespacesAndNewlines)
-//        let newList = TodoListModel(id:UUID(),nombre: titleF, image: "house", color: color.toHex() ?? "",todos: [])
-//        listas.append(newList)
-//        currentList = newList
-//        self.title = title
+    func createNewList(){
         guard let repo = repository else {
             return
         }
-        let newList = ListEntity(nombre: title, image: "house", color: color.toHex() ?? "")
+        let newList = ListEntity(nombre: title, image: "house", color: currentColor.toHex() ?? "")
         repo.addList(list: newList)
-        self.title
         currentList = newList
+        crearList = false
         loadLists()
     }
     
     func createNewTodo(name:String){
-//        let newTodo = TodoModel(todoName: name,completed: false,favorites: false,date: Date())
-//        guard let current = currentList else{
-//            return
-//        }
-//        if let index = listas.lastIndex(of: current) {
-//            currentList?.todos.append(newTodo)
-//            listas[index].todos.append(newTodo)
-//        }
         
         guard let repo = repository, let current = currentList else{
             return
         }
         let todo = TodoEntity(todoName: name, completed: false, favorites: false, date: Date(),list:currentList)
         repo.addTodo(todo: todo, currentList: current)
+    }
+    
+    func preModiciarLista(){
+        if let current = currentList {
+            title = current.nombre
+            currentColor = Color(hex: current.color)
+            isModifyList = true
+            crearList = true
+        }
+    }
+    
+    func modificarLista(){
+        if let current = currentList,let index = listas.lastIndex(of: current) {
+            var tempList = listas[index]
+            tempList.nombre = title
+            tempList.color = currentColor.toHex() ?? ""
+            
+            guard let repo = repository, let current = currentList else{
+                return
+            }
+            repo.modifyList(list: tempList, title: title, color: current.color)
+            
+            crearList = false
+            listas[index] = tempList
+            isModifyList = false
+        }
     }
     
     func showCurrentList(currentList:ListEntity){
@@ -95,8 +120,36 @@ class TodoHomeViewModel:ObservableObject{
         return count
     }
     
-    func agregarMejora(descripcion:String){
-        let newMejora = MejoraModel(descripcion: descripcion)
+    ///////////
+    ///////////
+    ///////////
+    ///////////
+    
+    func defaultSheetAgregarMejora(){
+        descripcion = ""
+        seleccionado = .bajo
+        mejoraActual = nil
+        openMejora = false
+    }
+    
+    func agregarMejora(){
+        let newMejora = MejoraModel(descripcion: descripcion,nivel: seleccionado.rawValue,color: seleccionado.color)
         mejoras.append(newMejora)
+        defaultSheetAgregarMejora()
+    }
+    
+    func modificatMejoraDatos(mejora:MejoraModel){
+        mejoraActual = mejora
+        descripcion = mejora.descripcion
+        seleccionado = Nivel(rawValue: mejora.nivel) ?? .bajo
+        openMejora = true
+    }
+    
+    func modificarMejora(mejora:MejoraModel){
+        if let index = mejoras.lastIndex(of: mejora) {
+            let newMejora = MejoraModel(descripcion: descripcion, nivel: seleccionado.rawValue, color: seleccionado.color)
+            mejoras[index] = newMejora
+            defaultSheetAgregarMejora()
+        }
     }
 }
