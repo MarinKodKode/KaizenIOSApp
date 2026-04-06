@@ -24,6 +24,8 @@
 		E997E71E2F7C974300DD0CEB /* CardListaView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E997E6F32F7C974300DD0CEB /* CardListaView.swift */; };
 		E997E71F2F7C974300DD0CEB /* CardSmallView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E997E6F02F7C974300DD0CEB /* CardSmallView.swift */; };
 		E997E7222F7C974300DD0CEB /* CrearListaTareaView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E997E6F42F7C974300DD0CEB /* CrearListaTareaView.swift */; };
+		E9C985E32F840ECC00F3D2F5 /* CardStyles.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9C985E22F840ECC00F3D2F5 /* CardStyles.swift */; };
+		E9C985E52F840ED300F3D2F5 /* View+Card.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9C985E42F840ED300F3D2F5 /* View+Card.swift */; };
 		E9FA20F92F75943000D9D5D4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E9FA20F52F75943000D9D5D4 /* Assets.xcassets */; };
 		E9FA20FA2F75943000D9D5D4 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9FA20F62F75943000D9D5D4 /* ContentView.swift */; };
 		E9FA20FB2F75943000D9D5D4 /* KaizenApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9FA20F72F75943000D9D5D4 /* KaizenApp.swift */; };
@@ -52,6 +54,8 @@
 		E997E6FB2F7C974300DD0CEB /* ListaModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListaModel.swift; sourceTree = "<group>"; };
 		E997E6FD2F7C974300DD0CEB /* TodoHomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodoHomeView.swift; sourceTree = "<group>"; };
 		E997E6FE2F7C974300DD0CEB /* CreateTodoListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateTodoListView.swift; sourceTree = "<group>"; };
+		E9C985E22F840ECC00F3D2F5 /* CardStyles.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardStyles.swift; sourceTree = "<group>"; };
+		E9C985E42F840ED300F3D2F5 /* View+Card.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "View+Card.swift"; sourceTree = "<group>"; };
 		E9FA20E52F75929700D9D5D4 /* Kaizen.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Kaizen.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E9FA20F52F75943000D9D5D4 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		E9FA20F62F75943000D9D5D4 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -159,6 +163,39 @@
 			path = Features;
 			sourceTree = "<group>";
 		};
+		E9C985E12F840EBD00F3D2F5 /* UI */ = {
+			isa = PBXGroup;
+			children = (
+				E9C985E62F840EE900F3D2F5 /* Styles */,
+			);
+			path = UI;
+			sourceTree = "<group>";
+		};
+		E9C985E62F840EE900F3D2F5 /* Styles */ = {
+			isa = PBXGroup;
+			children = (
+				E9C985E72F840EF900F3D2F5 /* Modifiers */,
+				E9C985E82F840F0000F3D2F5 /* Extensions */,
+			);
+			path = Styles;
+			sourceTree = "<group>";
+		};
+		E9C985E72F840EF900F3D2F5 /* Modifiers */ = {
+			isa = PBXGroup;
+			children = (
+				E9C985E22F840ECC00F3D2F5 /* CardStyles.swift */,
+			);
+			path = Modifiers;
+			sourceTree = "<group>";
+		};
+		E9C985E82F840F0000F3D2F5 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				E9C985E42F840ED300F3D2F5 /* View+Card.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
 		E9FA20DC2F75929700D9D5D4 = {
 			isa = PBXGroup;
 			children = (
@@ -178,6 +215,7 @@
 		E9FA20F82F75943000D9D5D4 /* Kaizen */ = {
 			isa = PBXGroup;
 			children = (
+				E9C985E12F840EBD00F3D2F5 /* UI */,
 				E96AFD852F7DC2CB0075BAA1 /* Utils */,
 				E997E70F2F7C974300DD0CEB /* Features */,
 				E9FA21012F7594D500D9D5D4 /* Data */,
@@ -306,6 +344,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E9C985E52F840ED300F3D2F5 /* View+Card.swift in Sources */,
 				E9FA20FA2F75943000D9D5D4 /* ContentView.swift in Sources */,
 				E997E7102F7C974300DD0CEB /* TodoHomeViewModel.swift in Sources */,
 				E997E7112F7C974300DD0CEB /* TodoHomeView.swift in Sources */,
@@ -330,6 +369,7 @@
 				E9FA21092F7595C800D9D5D4 /* Routes.swift in Sources */,
 				E9FA21072F75953F00D9D5D4 /* Router.swift in Sources */,
 				E9FA20FB2F75943000D9D5D4 /* KaizenApp.swift in Sources */,
+				E9C985E32F840ECC00F3D2F5 /* CardStyles.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -28,9 +28,9 @@ struct ContentView: View {
     }
 }
 
-//#Preview {
-//    @StateObject var router = Router()
-//    @StateObject var todoVm = TodoHomeViewModel()
-//    ContentView()
-//        .environmentObject(router)
-//}
+#Preview {
+    @StateObject var router = Router()
+    @StateObject var todoVm = TodoHomeViewModel()
+    ContentView()
+        .environmentObject(router)
+}

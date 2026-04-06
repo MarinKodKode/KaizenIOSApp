@@ -5,6 +5,7 @@ import SwiftData
 
 class TodoHomeViewModel:ObservableObject{
     @Published var listas:[ListEntity] = []
+    @Published var mejoras:[MejoraModel] = []
     @Published var title = "Lista sin titulo"
     @Published var categoria = ""
     @Published var currentColor: Color = .red
@@ -92,5 +93,10 @@ class TodoHomeViewModel:ObservableObject{
     func getCountTaskCompleted(lista:ListEntity) -> Int {
         let count = lista.todos.filter { !$0.completed }.count
         return count
+    }
+    
+    func agregarMejora(descripcion:String){
+        let newMejora = MejoraModel(descripcion: descripcion)
+        mejoras.append(newMejora)
     }
 }
