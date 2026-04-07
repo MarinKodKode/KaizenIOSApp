@@ -1,21 +1,21 @@
 import SwiftUI
 
-struct CrearListaTareaView: View {
+struct AgregarListaView: View {
     @EnvironmentObject var router:Router
-    @EnvironmentObject var todoVM:TodoHomeViewModel
+    @ObservedObject var todoVM:TodoHomeViewModel
+    @FocusState var focus:Bool
     @Environment(\.dismiss) var dismiss
-    @State var title = ""
-    @Binding var currentColor:ColorOptionModel
     var body: some View {
         VStack(alignment: .leading) {
-            Text("Nueva Lista")
+            Text(todoVM.isModifyList ? "Modificar Lista" : "Nueva Lista")
                 .font(.system(size: 25).bold())
 
-            TextField("Escribe el titulo de la lista", text: $title)
+            TextField("Escribe el titulo de la lista", text: $todoVM.title)
+                .focused($focus)
             Divider()
             Spacer()
 
-            PanelColoresView(currentColor: $currentColor)
+            PanelColoresView(currentColor: $todoVM.currentColor)
 
             HStack(spacing: 10) {
                 Button(
@@ -31,11 +31,14 @@ struct CrearListaTareaView: View {
 
                 Button(
                     action: {
-                        todoVM.createNewList(title:title, color: currentColor)
-                        dismiss()
+                        if todoVM.isModifyList {
+                            todoVM.modificarLista()
+                        }else{
+                            todoVM.createNewList()
+                        }
                     },
                     label: {
-                        Text("Crear Lista")
+                        Text(todoVM.isModifyList ? "Modificar" : "Crear Lista")
                             .foregroundColor(.blue)
                     }
                 )
@@ -47,10 +50,14 @@ struct CrearListaTareaView: View {
         .padding(.leading)
         .padding(.trailing)
         .background(.white)
+        .onAppear{
+            focus = true
+        }
     }
 }
 
-#Preview {
-    @State var currentColor: ColorOptionModel = ColorOptionModel()
-    CrearListaTareaView(currentColor: $currentColor)
-}
+//#Preview {
+//    @State var currentColor: Color = .blue
+//    @StateObject var todoVM:TodoHomeViewModel = TodoHomeViewModel()
+//    CrearListaTareaView(todoVM:todoVM,currentColor: $currentColor)
+//}

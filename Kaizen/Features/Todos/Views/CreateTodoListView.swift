@@ -9,36 +9,37 @@ import SwiftUI
 
 struct CreateTodoListView: View {
     @EnvironmentObject var router:Router
-    @EnvironmentObject var vmTodoHome:TodoHomeViewModel
-    @State var crearList = true
-    @State var crearTodo = false
+    @ObservedObject var todoVM:TodoHomeViewModel
+    
     
     var body: some View {
         ZStack(alignment: .bottomTrailing){
             
-            Color(vmTodoHome.currentColor.color)
-                .opacity(vmTodoHome.currentColor.isOpacity ? 0.5 : 1)
+            Color(todoVM.currentColor)
                 .ignoresSafeArea()
             
             VStack(spacing:20){
                 HStack{
-                    if vmTodoHome.currentList != nil{
+                    if todoVM.currentList != nil{
                         BackButtonView(action: {
-                            vmTodoHome.defaultView()
+                            todoVM.defaultView()
                         })
                     }
                     
-                    Text(vmTodoHome.currentList?.nombre ?? "")
+                    Text(todoVM.currentList?.nombre ?? "Pendientes")
                         .foregroundColor(.white)
                         .font(.title)
                         .bold()
+                        .onTapGesture {
+                            todoVM.preModiciarLista()
+                        }
                     
                     Spacer()
                 }
                 
                 LazyVStack{
-                    ForEach(vmTodoHome.currentList?.todos ?? [], id: \.self) { todo in
-                        CardSmallView(todo: todo)
+                    ForEach(todoVM.currentList?.todos ?? [], id: \.self) { todo in
+                        CardSmallView(todoVM:todoVM ,todo: todo)
                     }
                 }
                 
@@ -46,7 +47,7 @@ struct CreateTodoListView: View {
             }.frame(maxWidth: .infinity,alignment: .leading)
                 .padding(.horizontal)
             
-            Button(action:{ crearTodo = true },label: {
+            Button(action:{ todoVM.crearTodo = true },label: {
                 Image(systemName: "plus")
                     .resizable()
                     .aspectRatio(contentMode: .fill)
@@ -59,17 +60,17 @@ struct CreateTodoListView: View {
             .cornerRadius(10)
             .padding()
             
-        }.sheet(isPresented: $crearList){
-            CrearListaTareaView(currentColor:$vmTodoHome.currentColor)
+        }.sheet(isPresented: $todoVM.crearList){
+            AgregarListaView(todoVM: todoVM)
                 .interactiveDismissDisabled(true)
                 .presentationDetents([.fraction(0.25)])
         }
-        .sheet(isPresented: $crearTodo){
-            CrearTareaView()
+        .sheet(isPresented: $todoVM.crearTodo){
+            AgregarTareaView(todoVM:todoVM)
                 .presentationDetents([.fraction(0.15)])
         }
         .onAppear{
-            crearList = vmTodoHome.isModify ? false : true
+            todoVM.crearList = todoVM.isModify ? false : true
         }
     }
 }
@@ -78,7 +79,6 @@ struct CreateTodoListView: View {
     @StateObject var router = Router.shared
     @StateObject var todo = TodoHomeViewModel()
     
-    CreateTodoListView()
+    CreateTodoListView(todoVM:todo)
         .environmentObject(router)
-        .environmentObject(todo)
 }

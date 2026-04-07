@@ -1,8 +1,9 @@
 import SwiftUI
 
-struct CrearTareaView:View {
-    @EnvironmentObject var todoVM:TodoHomeViewModel
+struct AgregarTareaView:View {
+    @ObservedObject var todoVM:TodoHomeViewModel
     @Environment(\.dismiss) var dismiss
+    @FocusState var focus:Bool
     @State var name:String = ""
     var body: some View {
         VStack(alignment: .leading) {
@@ -13,6 +14,7 @@ struct CrearTareaView:View {
                     .frame(width: 20,height: 20)
                     .foregroundColor(.gray)
                 TextField("Agregar una tarea", text: $name)
+                    .focused($focus)
                 Button(action:{
                     todoVM.createNewTodo(name: name)
                     name = ""
@@ -39,6 +41,9 @@ struct CrearTareaView:View {
         .padding(.leading)
         .padding(.trailing)
         .background(.white)
+        .onAppear{
+            focus = true
+        }
     }
 }
 
@@ -72,6 +77,6 @@ struct ButtonRadioTodoView:View {
     }
 }
 
-#Preview {
-    CrearTareaView()
-}
+//#Preview {
+//    CrearTareaView()
+//}

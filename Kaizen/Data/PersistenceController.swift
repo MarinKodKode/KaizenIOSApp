@@ -9,7 +9,8 @@ struct PersistenceController {
     init() {
         do {
             container = try ModelContainer(
-                for: Todo.self
+                for: ListEntity.self,
+                TodoEntity.self
             )
         } catch {
             fatalError("Error: \(error)")

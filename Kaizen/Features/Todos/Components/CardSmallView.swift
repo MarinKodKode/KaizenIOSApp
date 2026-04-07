@@ -8,8 +8,8 @@
 import SwiftUI
 
 struct CardSmallView:View {
-    @EnvironmentObject var todoVM:TodoHomeViewModel
-    var todo:TodoModel
+    @ObservedObject var todoVM:TodoHomeViewModel
+    var todo:TodoEntity
     @State var colorBell:Color = .gray
     var body: some View {
         VStack(alignment:.leading,spacing: 10){
