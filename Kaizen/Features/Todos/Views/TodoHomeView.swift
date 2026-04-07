@@ -31,27 +31,21 @@ struct TodoHomeView: View {
                 
                 HStack{
                     VStack(alignment:.leading){
-
                         Text("Ahmed Garcia")
                     }
                     .font(.system(size:25).bold())
                     .foregroundColor(fgColorText)
                     
                     Spacer()
-                
-                    ZStack {
-                        Circle()
-                            .fill(Color.cyan)
-                            .frame(width: 48, height: 48)
-                        
-                        Image(systemName: "person.fill")
-                            .resizable()
-                            .scaledToFit()
-                            .foregroundStyle(.white)
-                            .frame(width: 20, height: 28)
-                    }
                     
-                    Image("company_logo")
+                    Image("profile_pic")
+                        .resizable()
+                        .scaledToFill()
+                        .foregroundStyle(.white)
+                        .frame(width: 48, height: 48)
+                        .clipShape(Circle())
+                    
+                    Image("inbursa")
                         .resizable()
                         .scaledToFit()
                         .frame(width: 48, height: 48)
