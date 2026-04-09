@@ -5,7 +5,9 @@ import SwiftUI
 
 class TodoHomeViewModel: ObservableObject {
     //Lista
-    @Published var listas: [ListEntity] = []
+    @Published var listas: [ListEntity] = [
+        ListEntity(nombre: "Oficina Tareas para hoy", image: "house", color: Color(.red).toHex()!)
+        ]
     @Published var title = ""
     @Published var currentColor: Color = .red
     @Published var currentList: ListEntity?
@@ -18,7 +20,7 @@ class TodoHomeViewModel: ObservableObject {
 
     //Sheets Mejora
     @Published var mejoras: [MejoraModel] = [
-        //        MejoraModel(descripcion: "1", nivel: "2", color: "12345"),
+                MejoraModel(descripcion: "1", nivel: "2", color: "12345"),
         //        MejoraModel(descripcion: "1", nivel: "2", color: "12345"),
         //        MejoraModel(descripcion: "1", nivel: "2", color: "12345"),
         //        MejoraModel(descripcion: "1", nivel: "2", color: "12345"),
@@ -139,8 +141,18 @@ class TodoHomeViewModel: ObservableObject {
         }
     }
 
+    func getProgressList(listaActual:ListEntity) -> Double {
+        if listaActual.todos.count <= 0 {
+            return 0
+        }
+        
+        let countTaskCom = getCountTaskCompleted(lista: listaActual)
+        
+        return Double(countTaskCom) / Double(listaActual.todos.count)
+    }
+    
     func getCountTaskCompleted(lista: ListEntity) -> Int {
-        let count = lista.todos.filter { !$0.completed }.count
+        let count = lista.todos.filter { $0.completed }.count
         return count
     }
 

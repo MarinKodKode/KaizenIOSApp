@@ -13,34 +13,45 @@ struct CardListaView: View {
     var lista:ListEntity
     
     var body: some View {
-        VStack(alignment: .leading,spacing: 4){
-            Image(systemName: lista.image)
-                .resizable()
-                .aspectRatio(contentMode: .fit)
-                .frame(width: 25,height: 25)
-                .foregroundColor(.white)
+        VStack(alignment: .leading){
             
-            Text(lista.nombre.capitalized)
-                .foregroundColor(.white)
-                .font(.system(size: 15))
-                .bold()
-                .lineLimit(1)
+            HStack{
+                Text(lista.nombre.capitalized)
+                    .foregroundColor(.white)
+                    .font(.system(size: 15))
+                    .bold()
+                    .lineLimit(2)
+                Spacer()
+                Image(systemName: "tray.circle.fill")
+                    
+                    .foregroundStyle(.white, .black.opacity(0.5))
+                    .font(.system(size: 25))
+            }
+            .frame(maxWidth: .infinity)
+            .padding(.vertical)
             
-            Text("* \(todoVM.getCountTaskCompleted(lista:lista)) Tareas")
-                .font(.system(size: 10))
-                .foregroundColor(.white)
+            Spacer()
             
-            Image(systemName: "plus")
-                .resizable()
-                .aspectRatio(contentMode: .fit)
-                .frame(width: 13,height: 13)
-                .foregroundColor(.white)
+            HStack{
+                Text( (lista.todos.isEmpty ? "Completar commit para manasd" : lista.todos.randomElement()?.todoName)! )
+                    .font(.caption)
+                    .foregroundColor(.white)
+                    .bold()
+                    .lineLimit(2)
+                Spacer()
+                Text("\(Int(todoVM.getProgressList(listaActual: lista) * 100))%")
+                    .font(.caption)
+                    .foregroundColor(.white)
+            }
+            
+            ProgressView(value: todoVM.getProgressList(listaActual: lista) )
+                .tint(todoVM.getProgressList(listaActual: lista) >= 1.0 ? .gray : .white)
+                .padding(.bottom)
         }
+        .frame(width: 200, height: 140)
         .padding(.horizontal)
-        .frame(width: 110, height: 130)
-        .background(Color(hex: lista.color))
-        .cornerRadius(20)
         .shadow(color: Color(hex: lista.color).opacity(1),radius: 4, y: 2)
+        .cardRoundedRectangleStyle(bgColor: Color(hex: lista.color), cornerRadius: 20)
         .onTapGesture {
             todoVM.showCurrentList(currentList: lista)
         }
@@ -50,6 +61,6 @@ struct CardListaView: View {
 #Preview {
     @StateObject var todoVM:TodoHomeViewModel = TodoHomeViewModel()
     @StateObject var router:Router = Router()
-    CardListaView(todoVM:todoVM,lista:ListEntity(nombre: "Pendientes de hoy", image: "house", color: "ddhsf2"))
+    CardListaView(todoVM:todoVM,lista:ListEntity(nombre: "Oficina Tareas para hoy", image: "house", color: Color(.red).toHex()!))
         .environmentObject(router)
 }
