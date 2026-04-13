@@ -2,12 +2,32 @@ import SwiftUI
 
 struct PanelMejoras: View {
     @ObservedObject var todoVM: TodoHomeViewModel
-
+    @State var crearMejora = false
     var body: some View {
         VStack {
-            HeaderText(text: "Mejoras de hoy")
+            HStack {
+                VStack(alignment:.leading) {
+                    HeaderText(text: "Mejoras de hoy")
+                    Text(Utils.formatDateEEEEdMMMM(from: Date()).capitalized)
+                        .font(.system(size: 14, weight: .bold))
+                        .foregroundColor(.gray)
+                }
 
-            PanelInput(todoVM: todoVM)
+                Spacer()
+                
+                Button(
+                    action: { crearMejora.toggle() },
+                    label: {
+                        Text("+ Nueva mejora")
+                            .font(.system(size: 14))
+                            .bold()
+                    }
+                )
+                .padding(.vertical, 10)
+                .padding(.horizontal, 14)
+                .background(.blue.opacity(0.2))
+                .clipShape(RoundedRectangle(cornerRadius: 10))
+            }
 
             if todoVM.mejoras.isEmpty {
                 Text("No hay mejoras por mostrar")
@@ -21,8 +41,8 @@ struct PanelMejoras: View {
                         cornerRadius: 10
                     )
             } else {
-                ScrollView(showsIndicators: false){
-                    VStack {
+                ScrollView(showsIndicators: false) {
+                    VStack(spacing:20){
                         ForEach(todoVM.mejoras) { mejora in
                             Card(todoVM: todoVM, mejora: mejora)
                         }
@@ -34,13 +54,11 @@ struct PanelMejoras: View {
                     maxHeight: .infinity,
                     alignment: .top
                 )
-                .cardRoundedRectangleStyle(
-                    bgColor: .gray.opacity(0.2),
-                    cornerRadius: 10
-                )
             }
-
-            Divider()
+        }
+        .sheet(isPresented: $crearMejora){
+            AgregarMejoraView(todoVM: todoVM)
+                .presentationDetents([.fraction(0.15)])
         }
     }
 }
@@ -77,47 +95,44 @@ struct Card: View {
     let mejora: MejoraModel
     @State var completado = false
     var body: some View {
-        HStack {
-            Button(
-                action: { completado.toggle() },
-                label: {
-                    Image(
-                        systemName: completado
-                            ? "checkmark.square.fill" : "square"
+        VStack(alignment: .leading, spacing: 10) {
+            VStack(alignment: .leading) {
+                HStack {
+                    Text("Nombre de la tarea")
+                        .bold()
+                        .strikethrough(completado)
+                    Spacer()
+                    Button(
+                        action: { completado.toggle() },
+                        label: {
+                            Image(
+                                systemName: completado
+                                    ? "checkmark.circle.fill"
+                                    : "circle"
+                            )
+                            .font(.system(size: 25))
+                            .foregroundColor(
+                                completado ? .blue : .gray
+                            )
+                        }
                     )
-                    .scaleEffect(completado ? 1.2 : 1)
-                    .animation(.spring(response: 0.3,dampingFraction: 0.5),value: completado)
-                    .foregroundColor(completado ? .green : .gray)
                 }
-            )
 
-            Text(mejora.descripcion.capitalized)
-                .frame(maxWidth: .infinity, alignment: .leading)
-                .strikethrough(completado)
+                Text(mejora.descripcion)
+                    .font(.footnote)
+                    .foregroundColor(.gray)
+            }
+            Divider()
+            Text("Today 10:00PM")
+                .font(.footnote)
                 .foregroundColor(.gray)
-
-            Button(
-                action: { todoVM.eliminarMejora(mejora: mejora) },
-                label: {
-                    Image(systemName: "minus")
-                        .foregroundColor(.gray)
-                }
-            )
         }
-        .frame(height: 35)
-        .padding(.horizontal)
-        .overlay(
-            RoundedRectangle(cornerRadius: 5)
-                .stroke(Color.gray, lineWidth: 1)
-        )
-
+        .frame(maxWidth: .infinity)
+        .padding()
+        .background(.white)
+        .clipShape(RoundedRectangle(cornerRadius: 10))
+        .shadow(radius: 2)
     }
-}
-
-#Preview {
-    @StateObject var todoVM: TodoHomeViewModel = TodoHomeViewModel()
-    PanelMejoras(todoVM: todoVM)
-        .padding(.horizontal)
 }
 
 #Preview {

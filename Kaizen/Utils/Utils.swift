@@ -12,6 +12,13 @@ class Utils{
         let blue = CGFloat(rgb & 0x0000FF) / 255.0
         return UIColor(red: red, green: green, blue: blue, alpha: 1.0)
     }
+    
+    static func formatDateEEEEdMMMM(from date:Date) -> String{
+        let formatter = DateFormatter()
+        formatter.locale = Locale(identifier: "es_ES")
+        formatter.dateFormat = "EEEE, d MMMM"
+        return formatter.string(from: date)
+    }
 }
 
 extension Color {

@@ -4,10 +4,29 @@ import SwiftData
 import SwiftUI
 
 class TodoHomeViewModel: ObservableObject {
+
+    //Variables
+    var safeTasks: [TodoEntity] {
+        currentList?.todos ?? []
+    }
+
+    var counts: [Filter: Int] {
+        let list = safeTasks
+        return [
+            .all: list.count,
+            .open: list.filter { $0.completed == false }.count,
+            .closed: list.filter { $0.completed == true }.count,
+        ]
+    }
+
     //Lista
     @Published var listas: [ListEntity] = [
-        ListEntity(nombre: "Oficina Tareas para hoy", image: "house", color: Color(.red).toHex()!)
-        ]
+        ListEntity(
+            nombre: "Oficina Tareas para hoy",
+            image: "house",
+            color: Color(.red).toHex()!
+        )
+    ]
     @Published var title = ""
     @Published var currentColor: Color = .red
     @Published var currentList: ListEntity?
@@ -17,10 +36,13 @@ class TodoHomeViewModel: ObservableObject {
 
     //Todo
     @Published var crearTodo = false
+    @Published var countTodos = 0
+    @Published var countCompleted = 0
+    @Published var countClosed = 0
 
     //Sheets Mejora
     @Published var mejoras: [MejoraModel] = [
-                MejoraModel(descripcion: "1", nivel: "2", color: "12345"),
+        MejoraModel(descripcion: "1", nivel: "2", color: "12345")
         //        MejoraModel(descripcion: "1", nivel: "2", color: "12345"),
         //        MejoraModel(descripcion: "1", nivel: "2", color: "12345"),
         //        MejoraModel(descripcion: "1", nivel: "2", color: "12345"),
@@ -42,11 +64,11 @@ class TodoHomeViewModel: ObservableObject {
     }
 
     func defaultView() {
-        Router.shared.popToRoot()
         title = ""
         currentList = nil
         isModify = false
         mejoraActual = nil
+        Router.shared.popToRoot()
     }
 
     func loadLists() {
@@ -141,16 +163,29 @@ class TodoHomeViewModel: ObservableObject {
         }
     }
 
-    func getProgressList(listaActual:ListEntity) -> Double {
+    func filteredTask(for filter: Filter) -> [TodoEntity] {
+        let todos = safeTasks
+
+        switch filter {
+        case .all:
+            return todos
+        case .open:
+            return todos.filter { !$0.completed }
+        case .closed:
+            return todos.filter { $0.completed }
+        }
+    }
+
+    func getProgressList(listaActual: ListEntity) -> Double {
         if listaActual.todos.count <= 0 {
             return 0
         }
-        
+
         let countTaskCom = getCountTaskCompleted(lista: listaActual)
-        
+
         return Double(countTaskCom) / Double(listaActual.todos.count)
     }
-    
+
     func getCountTaskCompleted(lista: ListEntity) -> Int {
         let count = lista.todos.filter { $0.completed }.count
         return count
@@ -200,12 +235,8 @@ class TodoHomeViewModel: ObservableObject {
     }
 
     func eliminarMejora(mejora: MejoraModel) {
-//        guard let index = mejoras.lastIndex(of: mejora) else {
-//            return
-//        }
 
-        withAnimation(.spring(response: 0.4,dampingFraction: 0.8)){
-//            mejoras.remove(at: index)
+        withAnimation(.spring(response: 0.4, dampingFraction: 0.8)) {
             mejoras.removeAll { $0.id == mejora.id }
         }
     }

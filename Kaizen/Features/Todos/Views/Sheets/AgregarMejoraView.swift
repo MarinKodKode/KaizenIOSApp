@@ -31,11 +31,6 @@ struct AgregarMejoraView:View {
     var body: some View {
         VStack(alignment: .leading) {
             HStack{
-//                Image(systemName: "circle")
-//                    .resizable()
-//                    .aspectRatio(contentMode: .fit)
-//                    .frame(width: 20,height: 20)
-//                    .foregroundColor(.gray)
                 TextField("Agregar mejora", text: $todoVM.descripcion)
                     .focused($focus)
                 Button(action:{
@@ -44,7 +39,6 @@ struct AgregarMejoraView:View {
                     }else{
                         todoVM.agregarMejora()
                     }
-//                    dismiss()
                 },label:{
                     Image(systemName: "arrowtriangle.up.square.fill")
                         .resizable()

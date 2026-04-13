@@ -3,7 +3,7 @@ import SwiftUI
 
 //Constantes para UI
 let gridItems = [GridItem(.flexible())]
-let bgColor: Color = .beige
+let bgColor: Color = .white
 let fgColorText: Color = .black
 let bgColorButtonCrear: Color = .brown
 
@@ -23,22 +23,6 @@ struct TodoHomeView: View {
                 Spacer()
             }
             .padding(.horizontal)
-
-            //            Button(
-            //                action: { router.navigate(to: .createAndModifyToDo) },
-            //                label: {
-            //                    Image(systemName: "plus")
-            //                        .resizable()
-            //                        .aspectRatio(contentMode: .fill)
-            //                        .frame(width: 15, height: 15)
-            //                        .foregroundColor(.white)
-            //                        .padding()
-            //                }
-            //            )
-            //            .clipShape(Circle())
-            //            .background(bgColorButtonCrear)
-            //            .cornerRadius(10)
-            //            .padding()
         }
     }
 
@@ -66,36 +50,36 @@ struct TodoHomeView: View {
     var content: some View {
         VStack(alignment: .leading, spacing: 30) {
 
-            HeaderText(text: "Listas")
+            HStack{
+                VStack(alignment:.leading){
+                    HeaderText(text: "Listas")
+                    Text("Tienes \(todoVM.listas.count ?? 0) listas")
+                        .font(.system(size: 14, weight: .bold))
+                        .foregroundColor(.gray)
+                }
+                Spacer()
+                Button(
+                    action: { router.navigate(to: .createAndModifyToDo) },
+                    label: {
+                        Text("+ Agregar")
+                            .font(.system(size: 14))
+                            .bold()
+                    }
+                )
+                .padding(.vertical, 10)
+                .padding(.horizontal, 14)
+                .background(.blue.opacity(0.2))
+                .clipShape(RoundedRectangle(cornerRadius: 10))
+            }
             
             ScrollView(.horizontal, showsIndicators: false) {
                 LazyHStack(alignment: .top, spacing: 20) {
-
-                    Button(
-                        action: { router.navigate(to: .createAndModifyToDo) },
-                        label: {
-                            Image(systemName: "plus")
-                                .frame(
-                                    maxWidth: .infinity,
-                                    maxHeight: .infinity
-                                )
-                                .foregroundColor(.gray)
-                        }
-                    )
-                    .frame(width: 200, height: 140)
-                    .cardDashStyle(
-                        dashColor: .gray,
-                        cornerRadius: 10,
-                        dashLineWidth: 1.2,
-                        segmentDash: 8
-                    )
-
                     ForEach(todoVM.listas, id: \.self) { lista in
                         CardListaView(todoVM: todoVM, lista: lista)
                     }
                 }
             }
-            .frame(height: 150)
+            .frame(height: 140)
             
             PanelMejoras(todoVM: todoVM)
         }
